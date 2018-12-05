@@ -1,10 +1,138 @@
 +++
-title = "Setting up an OCaml Environment with Nix/NixOS"
+title = "Setting up OCaml and Emacs with Nix/NixOS"
 author = ["Jethro Kuan"]
-lastmod = 2018-12-05T13:58:46+08:00
+lastmod = 2018-12-05T18:04:25+08:00
 tags = ["ocaml"]
 draft = false
 +++
 
-Setting up a working environment for OCaml on NixOS was not an easy
-task, so hello test
+I'm learning OCaml via [Real World OCaml](https://realworldocaml.org/), and getting a isolated OCaml
+development environment working with NixOS proved to be quite a
+struggle. This is a tutorial that describes _my_ way of getting OCaml
+set up.
+
+
+## Obtaining the OCaml Libraries {#obtaining-the-ocaml-libraries}
+
+OCaml and the more popular libraries are available in Nixpkgs, so one
+can write a simple `shell.nix` file to make them available in a nix
+shell:
+
+```nix
+with import <nixpkgs> {};
+
+let
+  ocamlPackages = pkgs.recurseIntoAttrs pkgs.ocamlPackages_latest;
+in
+{
+  pkgs.mkShell {
+     buildInputs = with pkgs; [
+      dune
+    ] ++ ( with ocamlPackages;
+    [
+      ocaml
+      core
+      core_extended
+      findlib
+      utop
+      merlin
+      ocp-indent
+    ]);
+  }
+}
+```
+
+With this, we now have OCaml and the `Core` standard library available
+in an isolated environment. We also installed [Merlin](https://github.com/ocaml/merlin/), which provides
+context-sensitive completion, and [ocp-indent](https://github.com/OCamlPro/ocp-indent), which provides
+auto-formatting of OCaml code.
+
+The issue with many of these OCaml libraries is that they are tied to
+their compiler versions. In addition, tools like merlin require the
+ability to locate OCaml libraries, which is tricky business in Nix
+land.
+
+Merlin and utop distribute their emacs-lisp libraries with the main
+executables. This means upon building the Nix derivations, one would
+find them in `${package}/share/emacs/site-lisp`. These libraries would
+need to be added to the Emacs load-path and loaded. In ordinary
+scenarios, I use [direnv](https://direnv.net/), which has first-class support for Nix and
+nix-shell environments, to automatically load project-specific
+libraries and binaries. This didn't work out. Instead, now I launch a
+separate Emacs instance within the nix-shell that would have access to
+all the executable and OCaml libraries.
+
+
+## Passing information via shell variables {#passing-information-via-shell-variables}
+
+I use shell variables to pass information to my Emacs configuration.
+First, I pass a set `IN_NIX_SHELL` to `1` in the nix-shell environment.
+This is simple enough:
+
+```nix
+pkgs.mkShell {
+  IN_NIX_SHELL = 1;
+}
+```
+
+In Emacs, I write a function that checks if I'm in a nix-shell using
+this variable:
+
+```emacs-lisp
+(defun in-nix-shell-p ()
+  (string-equal (getenv "IN_NIX_SHELL") "1"))
+```
+
+Next, I would also need to pass the site-lisp directories for merlin,
+utop and ocp-indent to Emacs:
+
+```nix
+pkgs.mkShell {
+  UTOP_SITE_LISP = "${ocamlPackages.utop}/share/emacs/site-lisp";
+  MERLIN_SITE_LISP = "${ocamlPackages.merlin}/share/emacs/site-lisp";
+  OCP_INDENT_SITE_LISP="${ocamlPackages.ocp-indent}/share/emacs/site-lisp";
+}
+```
+
+Here's how a final [shell.nix](https://github.com/jethrokuan/advent-2018/blob/d792855a5783fdb52753e71cfbcc7921c40f1d07/shell.nix) would look like.
+
+In Emacs I then conditionally load the libraries depending on:
+
+1.  Whether I'm in a nix-shell.
+2.  Whether these environment variables are passed.
+
+```emacs-lisp
+(setq jethro/merlin-site-elisp (getenv "MERLIN_SITE_LISP"))
+(setq jethro/utop-site-elisp (getenv "UTOP_SITE_LISP"))
+(setq jethro/ocp-site-elisp (getenv "OCP_INDENT_SITE_LISP"))
+
+(use-package merlin
+  :if (and jethro/merlin-site-elisp
+           (in-nix-shell-p))
+  :load-path jethro/merlin-site-elisp
+  :hook
+  (tuareg-mode . merlin-mode)
+  (merlin-mode . company-mode)
+  :custom
+  (merlin-command "ocamlmerlin"))
+
+(use-package utop
+  :if (and jethro/utop-site-elisp
+           (in-nix-shell-p))
+  :load-path jethro/utop-site-elisp
+  :hook
+  (tuareg-mode . utop-minor-mode))
+
+(use-package ocp-indent
+  :if (and jethro/ocp-site-elisp
+           (in-nix-shell-p))
+  :load-path jethro/ocp-site-elisp)
+```
+
+This part of my Emacs configuration continues to work for my own
+user-level Emacs daemon, and now performs additional work loading
+elisp provided by merlin, utop and ocp-indent when launched within my
+OCaml isolated environment.
+
+Hope this will help others set up their OCaml environment with NixOS!
+Many thanks to [this gist](https://gist.github.com/henrytill/7c1831b31d7780e64a2d53120aee13a1) for leading me in the right direction.
