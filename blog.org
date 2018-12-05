@@ -3,7 +3,7 @@
 #+hugo_auto_set_lastmod: t
 
 * Ocaml                                                               :ocaml:
-** TODO Setting up an OCaml Environment with Nix/NixOS
+** Setting up an OCaml Environment with Nix/NixOS
 :PROPERTIES:
 :EXPORT_FILE_NAME: ocaml_with_nix
 :END:
