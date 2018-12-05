@@ -1,0 +1,4 @@
+baseURL = "http://blog.jethrokuan.com/"
+languageCode = "en-us"
+title = "My Blog"
+theme = "er"

@@ -1,0 +1,12 @@
+#+HUGO_SECTION: blog
+#+HUGO_BASE_DIR: .
+#+hugo_auto_set_lastmod: t
+
+* Ocaml                                                               :ocaml:
+** TODO Setting up an OCaml Environment with Nix/NixOS
+:PROPERTIES:
+:EXPORT_FILE_NAME: ocaml_with_nix
+:END:
+
+Setting up a working environment for OCaml on NixOS was not an easy
+task, so hello?
