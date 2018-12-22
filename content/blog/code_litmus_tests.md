@@ -1,7 +1,7 @@
 +++
 title = "Litmus Tests for Writing Code"
 author = ["Jethro Kuan"]
-lastmod = 2018-12-22T11:11:47+08:00
+lastmod = 2018-12-22T17:14:28+08:00
 tags = ["software-eng", "unix"]
 draft = false
 +++
@@ -12,7 +12,7 @@ you write:
 1.  **API Modularity**: Can you describe well your API, if written in a purely human
     language with no code extracts?
 2.  **Compactness**: Does an experienced user need a manual?
-3.  Does changing a part of code affect other system properties?
+3.  **Orthogonality**: Does changing a part of code affect other system properties?
 4.  **Single Point of Truth**: Do data structures have states with 1-1
     correspondence with the states of the real-world system?
 5.  **Code Modularity**: Are there any global variables? Is the size of
