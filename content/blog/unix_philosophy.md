@@ -1,7 +1,8 @@
 +++
 title = "The Unix Philosophy"
 author = ["Jethro Kuan"]
-lastmod = 2018-12-13T11:42:32+08:00
+lastmod = 2018-12-22T11:11:34+08:00
+tags = ["software-eng", "unix"]
 draft = false
 +++
 
