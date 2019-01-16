@@ -162,6 +162,51 @@ constrained nature of patterns.
 
 ** TODO Getting Things Done with Org-mode
 
+** TODO Using ~nix-buffer~ with Emacs
+:PROPERTIES:
+:EXPORT_FILE_NAME: nix_buffer_emacs
+:END:
+
+I do [[https://braindump.jethrokuan.com/][a lot of note-taking]] in Emacs, and have recently started using
+org-babel within my notes. Being on NixOS, this proved to be slightly
+problematic: ~org-babel~ requires the executables to be in ~PATH~. In
+NixOS this is concerning: we don't want the executables to be
+available globally.
+
+My traditional approach would be to use the [[https://direnv.net/][direnv]] [[https://github.com/shosti/direnv-mode][integration]] in
+Emacs, populating my path in a certain directory. However, in this
+case I keep my notes in a flat hierarchy:
+
+#+begin_src shell :results value org
+   tree -L 1 -P "*.org" ~/.org/braindump/org/ | head -n 10
+#+end_src
+
+#+RESULTS:
+#+begin_src org
+/home/jethro/.org/braindump/org/
+├── artificial_intelligence.org
+├── auto
+├── bayesian_inference.org
+├── bittorrent.org
+├── blockchain.org
+├── cite
+├── coding_interview.org
+├── computer_organization.org
+├── computer_vision.org
+#+end_src
+
+In this case ~direnv~ doesn't let me load different environments for
+different files. Here I turn to ~nix-buffer~, which by default loads a
+~dir-locals.nix~ file of this form:
+
+#+begin_src nix
+  let pkgs = import <nixpkgs> {}; in
+    pkgs.nixBufferBuilders.withPackages [ pkgs.rWrapper ]
+#+end_src
+
+To make it load a specific Nix file per org-file, all that's left is
+to set a file-local variable for ~nix-buffer-root-file~. And that's it!
+
 * Retrospectives
 
 ** 2018 in Review
