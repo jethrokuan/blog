@@ -177,7 +177,7 @@ My traditional approach would be to use the [[https://direnv.net/][direnv]] [[ht
 Emacs, populating my path in a certain directory. However, in this
 case I keep my notes in a flat hierarchy:
 
-#+begin_src shell :results value org
+#+begin_src shell :exports results :results value org
    tree -L 1 -P "*.org" ~/.org/braindump/org/ | head -n 10
 #+end_src
 

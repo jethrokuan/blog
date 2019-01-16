@@ -1,7 +1,7 @@
 +++
 title = "Using nix-buffer with Emacs"
 author = ["Jethro Kuan"]
-lastmod = 2019-01-16T09:49:15+08:00
+lastmod = 2019-01-16T11:01:29+08:00
 tags = ["emacs"]
 draft = false
 +++
@@ -16,8 +16,17 @@ My traditional approach would be to use the [direnv](https://direnv.net/) [integ
 Emacs, populating my path in a certain directory. However, in this
 case I keep my notes in a flat hierarchy:
 
-```shell
-tree -L 1 -P "*.org" ~/.org/braindump/org/ | head -n 10
+```org
+/home/jethro/.org/braindump/org/
+├── artificial_intelligence.org
+├── auto
+├── bayesian_inference.org
+├── bittorrent.org
+├── blockchain.org
+├── cite
+├── coding_interview.org
+├── computer_organization.org
+├── computer_vision.org
 ```
 
 In this case `direnv` doesn't let me load different environments for
