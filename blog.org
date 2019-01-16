@@ -162,7 +162,7 @@ constrained nature of patterns.
 
 ** TODO Getting Things Done with Org-mode
 
-** TODO Using ~nix-buffer~ with Emacs
+** Using ~nix-buffer~ with Emacs
 :PROPERTIES:
 :EXPORT_FILE_NAME: nix_buffer_emacs
 :END:

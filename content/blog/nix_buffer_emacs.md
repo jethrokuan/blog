@@ -1,9 +1,9 @@
 +++
 title = "Using nix-buffer with Emacs"
 author = ["Jethro Kuan"]
-lastmod = 2019-01-16T09:20:39+08:00
+lastmod = 2019-01-16T09:49:15+08:00
 tags = ["emacs"]
-draft = true
+draft = false
 +++
 
 I do [a lot of note-taking](https://braindump.jethrokuan.com/) in Emacs, and have recently started using
