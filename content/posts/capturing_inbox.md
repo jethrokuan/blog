@@ -1,7 +1,7 @@
 +++
 title = "Org-mode Workflow Part 1: Capturing in the Inbox"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-13T20:27:52+08:00
+lastmod = 2019-12-13T20:33:32+08:00
 draft = false
 math = true
 +++
@@ -20,18 +20,18 @@ of accomplishing tasks.
 
 > Your brain is for having ideas, not storing them -- David Allen
 
-The inbox is where everything begins. Every article, every thought,
-every assignment first ends up in the inbox. Because the inbox is so
-key to the process, it is important that it is easy to add items into
-the inbox, and equally easy to process them. The inbox is all about
-trust. Trust that you everything you will need to think about is
+The inbox is where everything begins. Every article, thought and
+assignment starts from the inbox. Because the inbox is so crucial to
+the workflow, it is important that the process of adding and
+processing items is as frictionless as possible. The inbox is all
+about trust. Trust that you everything you will need to think about is
 captured somewhere. This allows you to give your 100% for the current
 task.
 
 Tasks pile up quickly, and arrive whenever they please, more often
-than not while we are in the middle of something. It is important that
-we are able to file these tasks away quickly, and keep our attention
-on the current task.
+than not while we are in the middle of something. The inbox is
+designed such that I am able to file these tasks away in a snap, and
+keep my attention on the current task.
 
 
 ## Capturing Items Manually {#capturing-items-manually}
@@ -45,9 +45,9 @@ to my inbox.
 
 ## Capturing Articles {#capturing-articles}
 
-Org-mode has a neat feature called [org-protocol](https://orgmode.org/worg/org-contrib/org-protocol.html), one of which ties in
+Org-mode has a neat feature called [org-protocol](https://orgmode.org/worg/org-contrib/org-protocol.html), which ties in
 neatly with org-capture. Here, I use a Javascript bookmarklet to
-automatically add web-pages, PDFs to my inbox.
+automatically add webpages and PDFs to my inbox.
 
 {{< figure src="/ox-hugo/article_capture.gif" caption="Figure 2: Capturing articles with a bookmarklet" >}}
 
