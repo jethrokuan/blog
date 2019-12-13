@@ -1,7 +1,7 @@
 +++
 title = "Org-mode Workflow: A Preview"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-13T20:25:20+08:00
+lastmod = 2019-12-14T01:18:29+08:00
 draft = false
 math = true
 +++
@@ -12,8 +12,20 @@ give you an idea of what to expect. What I'm about to present is a
 workflow I've tweaked over several years. It is a workflow that has
 constantly evolved to adapt to my varying needs. At the time of
 writing, I have completed 3478 todo items, and written over 29000
-lines in my personal knowledge base. This workflow works wonders for
-me, and I hope that portions of it will inspire changes in yours.
+lines in my personal knowledge base.
+
+This is **not** going to be a tutorial about Emacs or Org-mode. Many
+years of trying to get people to use Emacs has taught me that teaching
+this is extremely difficult, especially for those with no intrinsic
+motivation. Those that have indeed picked it up have observed me use
+Emacs from afar, and deemed it worthy of their time. Emacs has an
+incredibly steep learning curve, but what you get in return is a tool
+that will pay dividends over the remainder of your lifetime. Know that
+the setup I have is not complex: it's no more than 500 lines of Emacs
+Lisp. I wish this were more applicable to non-Emacs users, but
+Org-mode is one-of-a-kind, and much of this would be impossible
+without it. I hope this series will inspire you to pick up Emacs and
+org-mode.
 
 1.  [Part 1: Capturing]({{< relref "capturing_inbox" >}})
 
