@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software-eng on Jethro Kuan</title>
+    <link>https://blog.jethro.dev/tags/software-eng/</link>
+    <description>Recent content in software-eng on Jethro Kuan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Dec 2019 20:39:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jethro.dev/tags/software-eng/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Litmus Tests for Writing Code</title>
+      <link>https://blog.jethro.dev/post/code_litmus_tests/</link>
+      <pubDate>Thu, 12 Dec 2019 20:39:51 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/post/code_litmus_tests/</guid>
+      <description>Here are some questions you can ask yourself when evaluating the code you write:
+ API Modularity: Can you describe well your API, if written in a purely human language with no code extracts? Compactness: Does an experienced user need a manual? Orthogonality: Does changing a part of code affect other system properties? Single Point of Truth: Do data structures have states with 1-1 correspondence with the states of the real-world system?</description>
+    </item>
+    
+  </channel>
+</rss>

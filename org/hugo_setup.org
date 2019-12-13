@@ -1,0 +1,3 @@
+#+HUGO_BASE_DIR: ..
+#+HUGO_AUTO_SET_LASTMOD: t
+#+hugo_custom_front_matter: :math true

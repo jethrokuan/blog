@@ -1,14 +1,14 @@
 +++
 title = "Real World OCaml: A Review"
 author = ["Jethro Kuan"]
-lastmod = 2018-12-06T11:52:43+08:00
-tags = ["ocaml"]
-draft = true
+lastmod = 2019-12-13T20:18:52+08:00
+draft = false
+math = true
 +++
 
--   Real World OCaml is peppered with interesting tidbits about the
-    implementations of OCaml that help with understanding the way the
-    language is constructed.
+Real World OCaml is peppered with interesting tidbits about the
+implementations of OCaml that help with understanding the way the
+language is constructed.
 
 Here's a quote about the limitations of pattern matching, which
 helped my understand the deliberation behind its constraints.

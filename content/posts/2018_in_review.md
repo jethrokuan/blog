@@ -1,8 +1,9 @@
 +++
 title = "2018 in Review"
 author = ["Jethro Kuan"]
-lastmod = 2018-12-08T21:55:55+08:00
-draft = false
+lastmod = 2019-12-13T20:21:13+08:00
+draft = true
+math = true
 +++
 
 At the end of the year, I normally conduct a retrospective. This is,

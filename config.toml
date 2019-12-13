@@ -2,3 +2,8 @@ baseURL = "https://blog.jethro.dev/"
 languageCode = "en-us"
 title = "Jethro Kuan"
 theme = "er"
+
+[params]
+showTagCloud = false
+description = ""
+email = "jethrokuan95@gmail.com"

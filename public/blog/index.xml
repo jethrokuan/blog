@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Jethro Kuan</title>
+    <link>https://blog.jethro.dev/blog/</link>
+    <description>Recent content in Blogs on Jethro Kuan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Jan 2019 11:01:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jethro.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using nix-buffer with Emacs</title>
+      <link>https://blog.jethro.dev/blog/nix_buffer_emacs/</link>
+      <pubDate>Wed, 16 Jan 2019 11:01:29 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/blog/nix_buffer_emacs/</guid>
+      <description>I do a lot of note-taking in Emacs, and have recently started using org-babel within my notes. Being on NixOS, this proved to be slightly problematic: org-babel requires the executables to be in PATH. In NixOS this is concerning: we don&#39;t want the executables to be available globally.
+My traditional approach would be to use the direnv integration in Emacs, populating my path in a certain directory. However, in this case I keep my notes in a flat hierarchy:</description>
+    </item>
+    
+    <item>
+      <title>Litmus Tests for Writing Code</title>
+      <link>https://blog.jethro.dev/blog/code_litmus_tests/</link>
+      <pubDate>Sat, 22 Dec 2018 17:14:28 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/blog/code_litmus_tests/</guid>
+      <description>Here are some questions you can ask yourself when evaluating the code you write:
+ API Modularity: Can you describe well your API, if written in a purely human language with no code extracts? Compactness: Does an experienced user need a manual? Orthogonality: Does changing a part of code affect other system properties? Single Point of Truth: Do data structures have states with 1-1 correspondence with the states of the real-world system?</description>
+    </item>
+    
+    <item>
+      <title>The Unix Philosophy</title>
+      <link>https://blog.jethro.dev/blog/unix_philosophy/</link>
+      <pubDate>Sat, 22 Dec 2018 11:11:34 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/blog/unix_philosophy/</guid>
+      <description>In The Art of Unix Programming, Ken Thompson was quoted to have provided the following design rules:
+ Build modular programs Write readable programs Use composition Separate mechanisms from policy Write simple programs Write small programs Write transparent programs Write robust programs Make data complicated when required, not the program Build on potential users&amp;rsquo; expected knowledge Avoid unnecessary output Write programs which fail in a way easy to diagnose Value developer time over machine time Write abstract programs that generate code instead of writing code by hand Prototype software before polishing it Write flexible and open programs Make the program and protocols extensible  Particularly fascinating was the point on separating mechanisms from policy.</description>
+    </item>
+    
+    <item>
+      <title>2018 in Review</title>
+      <link>https://blog.jethro.dev/blog/2018_in_review/</link>
+      <pubDate>Sat, 08 Dec 2018 21:55:55 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/blog/2018_in_review/</guid>
+      <description>At the end of the year, I normally conduct a retrospective. This is, however, the first time I&#39;m making it public. Naturally, there are things that I cannot, or am unwilling to share, and hence this represents a subset of my reflection over 2018. Here I share the key milestones and some thoughts in chronological order.
+January marked the start of my second semester as a Year 2 Computer Science student in the National University of Singapore.</description>
+    </item>
+    
+    <item>
+      <title>Setting up OCaml and Emacs with Nix/NixOS</title>
+      <link>https://blog.jethro.dev/blog/ocaml_with_nix/</link>
+      <pubDate>Wed, 05 Dec 2018 18:04:25 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/blog/ocaml_with_nix/</guid>
+      <description>I&#39;m learning OCaml via Real World OCaml, and getting a isolated OCaml development environment working with NixOS proved to be quite a struggle. This is a tutorial that describes my way of getting OCaml set up.
+Obtaining the OCaml Libraries OCaml and the more popular libraries are available in Nixpkgs, so one can write a simple shell.nix file to make them available in a nix shell:
+with import &amp;lt;nixpkgs&amp;gt; {}; let ocamlPackages = pkgs.</description>
+    </item>
+    
+  </channel>
+</rss>

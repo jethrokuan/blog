@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jethro Kuan</title>
+    <link>https://blog.jethro.dev/tags/</link>
+    <description>Recent content in Tags on Jethro Kuan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Dec 2019 15:34:28 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jethro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>emacs</title>
+      <link>https://blog.jethro.dev/tags/emacs/</link>
+      <pubDate>Fri, 13 Dec 2019 15:34:28 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ocaml</title>
+      <link>https://blog.jethro.dev/tags/ocaml/</link>
+      <pubDate>Thu, 12 Dec 2019 20:39:56 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/tags/ocaml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software-eng</title>
+      <link>https://blog.jethro.dev/tags/software-eng/</link>
+      <pubDate>Thu, 12 Dec 2019 20:39:51 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/tags/software-eng/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unix</title>
+      <link>https://blog.jethro.dev/tags/unix/</link>
+      <pubDate>Thu, 12 Dec 2019 20:39:51 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/tags/unix/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jethro Kuan</title>
+    <link>https://blog.jethro.dev/</link>
+    <description>Recent content on Jethro Kuan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Dec 2019 15:34:28 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jethro.dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Org-mode: The Swiss-Army Knife</title>
+      <link>https://blog.jethro.dev/post/gtd_org_mode/</link>
+      <pubDate>Fri, 13 Dec 2019 15:34:28 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/post/gtd_org_mode/</guid>
+      <description>This is going to be a multi-part series on Emacs and org-mode. This is also going to be a really long series, so before we begin I want to give you an idea of what to expect. What I&#39;m about to present is a workflow I&#39;ve tweaked over several years. It is a workflow that has constantly evolved to adapt to my varying needs. At the time of writing, I have completed 3478 todo items, and written over 29000 lines in my personal knowledge base.</description>
+    </item>
+    
+    <item>
+      <title>Setting up OCaml and Emacs with Nix/NixOS</title>
+      <link>https://blog.jethro.dev/post/ocaml_with_nix/</link>
+      <pubDate>Thu, 12 Dec 2019 20:39:56 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/post/ocaml_with_nix/</guid>
+      <description>I&#39;m learning OCaml via Real World OCaml, and getting a isolated OCaml development environment working with NixOS proved to be quite a struggle. This is a tutorial that describes my way of getting OCaml set up.
+Obtaining the OCaml Libraries OCaml and the more popular libraries are available in Nixpkgs, so one can write a simple shell.nix file to make them available in a nix shell:
+with import &amp;lt;nixpkgs&amp;gt; {}; let ocamlPackages = pkgs.</description>
+    </item>
+    
+    <item>
+      <title>Litmus Tests for Writing Code</title>
+      <link>https://blog.jethro.dev/post/code_litmus_tests/</link>
+      <pubDate>Thu, 12 Dec 2019 20:39:51 +0800</pubDate>
+      
+      <guid>https://blog.jethro.dev/post/code_litmus_tests/</guid>
+      <description>Here are some questions you can ask yourself when evaluating the code you write:
+ API Modularity: Can you describe well your API, if written in a purely human language with no code extracts? Compactness: Does an experienced user need a manual? Orthogonality: Does changing a part of code affect other system properties? Single Point of Truth: Do data structures have states with 1-1 correspondence with the states of the real-world system?</description>
+    </item>
+    
+  </channel>
+</rss>
