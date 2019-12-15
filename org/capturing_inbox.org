@@ -1,5 +1,6 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Org-mode Workflow Part 1: Capturing in the Inbox
+#+DATE: <2019-12-14 Sat>
 
 Have you ever sat yourself down with a piece of paper, writing out a
 list of things to do? I want you to remember how you felt right after.

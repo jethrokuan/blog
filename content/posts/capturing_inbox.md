@@ -1,7 +1,8 @@
 +++
 title = "Org-mode Workflow Part 1: Capturing in the Inbox"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-13T20:33:32+08:00
+date = 2019-12-14T00:00:00+08:00
+lastmod = 2019-12-15T17:30:05+08:00
 draft = false
 math = true
 +++
