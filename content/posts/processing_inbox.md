@@ -2,7 +2,7 @@
 title = "Org-mode Workflow Part 2: Processing the Inbox"
 author = ["Jethro Kuan"]
 date = 2019-12-17T00:00:00+08:00
-lastmod = 2019-12-17T22:58:58+08:00
+lastmod = 2019-12-17T23:10:13+08:00
 draft = false
 math = true
 +++
@@ -172,12 +172,12 @@ Next Tasks
 Choosing a task to do now becomes _formulaic_. Here's the formula I
 use:
 
-1.  Is there a task scheduled for today that is undone? If so, pick this one.
-2.  Is there a Priority A task with an urgent deadline? If so, pick
-    this one.
-3.  Filter by location context (e.g. if I'm at home, show only tasks
+1.  Filter by location context (e.g. if I'm at home, show only tasks
     tagged with `@home`).
-4.  If I have time constraints, filter by effort estimate.
+2.  If I have time constraints, filter by effort estimate.
+3.  Is there a task scheduled for today that is undone? If so, pick this one.
+4.  Is there a Priority A task with an urgent deadline? If so, pick
+    this one.
 5.  Pick a high priority task from the same project if the previous
     task done was from this project, else pick any high priority task.
 
