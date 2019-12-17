@@ -23,7 +23,8 @@ Org-mode is one-of-a-kind, and much of this would be impossible
 without it. I hope this series will inspire you to pick up Emacs and
 org-mode.
 
-1. [[file:capturing_inbox.org][Part 1: Capturing]]
+1. [[file:capturing_inbox.org][Part 1: Capturing Into The Inbox]]
+2. [[file:processing_inbox.org][Part 2: Processing The Inbox]]
 
 * Who am I?
 
@@ -49,7 +50,7 @@ about these 2 systems, I recommend reading these two books:
 [[file:images/blog/screenshot2019-12-13_15-35-03_.png]]
 
 Despite appearing complicated, the workflow is in truth extremely
-simple. All it does is exploit some of the key ideas in GD and
+simple. All it does is exploit some of the key ideas in GTD and
 Zettelkasten, using org-mode as the glue software. In fact, it is an
 extreme simplification that has become evidently necessary in this
 world of information overload, using a systematic approach to remain

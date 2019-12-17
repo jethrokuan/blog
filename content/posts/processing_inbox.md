@@ -1,0 +1,199 @@
++++
+title = "Org-mode Workflow Part 2: Processing the Inbox"
+author = ["Jethro Kuan"]
+date = 2019-12-17T00:00:00+08:00
+lastmod = 2019-12-17T22:58:58+08:00
+draft = false
+math = true
++++
+
+Here I assume you've read, and completed the previous part on
+[capturing everything in your inbox]({{< relref "capturing_inbox" >}}).
+
+There are many to-do lists that don't include processing as part of
+the workflow. These often manifest as a simple checklist, checking off
+items as you go. Why then, do I recommend having this step?
+
+
+## Why process the inbox? {#why-process-the-inbox}
+
+The benefits of having a separate processing step aren't so obvious
+when the number of items in your checklist is small. When you've taken
+every open loop, and dump it onto a piece of paper, you may be
+surprised to see that you have many more to-do items than you
+expected. I suspect that those with few items on their checklist are
+holding less (or more) important tasks in the recesses of their mind,
+possibly a sign of distrust in their capture system. Either way, not
+ideal.
+
+When you have many to-do items, how do you then pick the right task to
+do first? You'd glance through the whole list, and pick the task you
+think is best at that current point in time. What you're
+subconsciously doing here is mentally processing all these items. This
+is why I (and David Allen) recommend extracting this processing step
+out. We subconsciously do it anyway, why not make this step explicit,
+and do this step only once per task? Hence, processing is all about
+**making tasks actionable**, and **giving tasks enough context to help me
+decide what's the next right task to tackle**.
+
+To make tasks actionable, David Allen recommends using verbs to
+preface all to-do items during this step. I skip this because in my
+line of work the actions are pretty obvious. For example, if the inbox
+item was a link, the action would be to read through the linked item.
+However, if the captured inbox item is a large task that can be broken
+down into smaller tasks, I may delete the task and replace them with
+smaller tasks.
+
+Next, what kind of context helps me decide on what to work on next?
+Some useful context cues are:
+
+1.  **Priority:** How important is it for me to get this done?
+2.  **Location:** Where can I do this task? Perhaps only at home, or in
+    school, or at the office.
+3.  **Effort Estimate:** If I only have 30 minutes of available time
+    remaining, I'd prefer to work on tasks that take an estimate of no
+    more than 30 minutes, than embark on a large task that I would have
+    to pause on.
+4.  **Project:** If this task belongs to a particular project, it helps
+    to group/classify these tasks so I can work on clearing related
+    tasks together.
+5.  **Date:** Perhaps this task has a due date, or can only be performed
+    on a specific date.
+
+Perhaps more contextual information can be added, but I find that
+these 5 are sufficient for my needs.
+
+
+## When to process the inbox {#when-to-process-the-inbox}
+
+This is highly subjective, but I find that this is a task I can do
+without deep thinking. Hence, I find myself processing my inbox when
+taking breaks from deep work, but more often than not in the morning
+and night when I am starting or ending my day.
+
+
+## Setting Dates on Tasks {#setting-dates-on-tasks}
+
+Typically the first thing I do when I process my inbox is to schedule
+the task, or add a deadline to a task, where necessary. Allow me to
+explain a little on their significance.
+
+A scheduled task is a task that I _absolutely_ have to do on that
+specific day, on that specific time. Such tasks include appointments
+(with friends, or the doctor), and often appear on the calendar. Most
+often, I transfer these tasks to Google Calendar, and use [org-gcal](https://github.com/myuhe/org-gcal.el) to
+make the items visible in my birds-eye view. It is important to
+understand that the calendar is sacred, and to not make the mistake of
+scheduling tasks that do not absolutely have to be done on that time.
+
+There are, however, tasks that have to be done by some time. Common
+examples of such tasks include homework, or bill payments. Org-mode
+supports tagging tasks with deadlines, and such deadlines also appear
+in the birds-eye agenda view.
+
+
+## How this all looks in org-mode {#how-this-all-looks-in-org-mode}
+
+The first thing I do is to look through each task and schedule the
+task, or add a deadline to a task. Here's a demonstration of the sweet
+visual interface for adding a deadline to a task in org-mode:
+
+{{< figure src="/ox-hugo/deadline.gif" caption="Figure 1: Adding a deadline to an item" >}}
+
+I thought I'd leave code out of this series, but I want to give a
+little teaser into how easy it is to set this all up in Org-mode's
+org-agenda. Here's the function I call to process each inbox item:
+
+```lisp
+(defun jethro/org-agenda-process-inbox-item ()
+  "Process a single item in the org-agenda."
+  (org-with-wide-buffer
+   (org-agenda-set-tags)
+   (org-agenda-priority)
+   (call-interactively 'jethro/my-org-agenda-set-effort)
+   (org-agenda-refile nil nil t)))
+```
+
+Perhaps the technical reader can guess what the function does. Here's
+a little GIF showing me processing real tasks (I don't have much to
+hide).
+
+{{< figure src="/ox-hugo/process_inbox.gif" caption="Figure 2: Processing inbox entries" >}}
+
+Let's walk through it step-by-step.
+
+1.  **Give the task some location context**. Tagging the task with tags
+    `@school` and `@home` means I can work on this task both at school
+    and at home.
+2.  **Give the task a priority level**, between `A`, `B`, and `C`. Here's how I
+    decide a priority. It's a pretty loose dichotomy, but works for me.
+    -   **A:** Tasks that must get done regardless.
+    -   **B:** Tasks that should get done, but only after Priority A tasks.
+    -   **C:** Tasks that are good to get done, but not compulsory.
+3.  **Give the task an effort estimate**. This is in the format `HH:MM`,
+    if the task is estimated to take days, perhaps it needs to be
+    broken down further.
+4.  **Refile the item.** Here my tasks get assigned to the `FYP` project,
+    because the readings are related to my Final Year Research project.
+
+That's it! Make it a habit to bring your inbox count to 0, items are
+no use left in the inbox.
+
+
+## The Agenda View {#the-agenda-view}
+
+With everything processed, we let's take a look at agenda view:
+
+{{< figure src="/ox-hugo/agenda_view.png" caption="Figure 3: The Org-Agenda View" >}}
+
+There are 5 main components:
+
+The Day Agenda
+: this shows tasks scheduled for the day, as well as
+    time spent on tasks for the day. The agenda for different days can
+    be shown, and the agenda for the week, or even the year.
+
+Deadlines
+: Below the day agenda are all upcoming deadlines.
+
+In Progress
+: This shows tasks that are in-progress, or are
+    currently incomplete
+
+Project Tasks
+: Tasks that belong to a particular project.
+
+Next Tasks
+: Tasks that are standalone.
+
+
+## Doing the Next Right Thing {#doing-the-next-right-thing}
+
+Choosing a task to do now becomes _formulaic_. Here's the formula I
+use:
+
+1.  Is there a task scheduled for today that is undone? If so, pick this one.
+2.  Is there a Priority A task with an urgent deadline? If so, pick
+    this one.
+3.  Filter by location context (e.g. if I'm at home, show only tasks
+    tagged with `@home`).
+4.  If I have time constraints, filter by effort estimate.
+5.  Pick a high priority task from the same project if the previous
+    task done was from this project, else pick any high priority task.
+
+
+## Clocking In {#clocking-in}
+
+Once I've picked a task to work on, I go to that line and press `i` to
+clock-in. This allows me to track where I spend my time. As a side
+benefit, I get better at estimating how long each task takes, by
+observing the total time I spent on previous similar tasks. Example of
+tasks that have been tracked can be seen in the agenda view above.
+This information also comes in handy when doing the weekly reviews
+that David Allen recommends in GTD.
+
+
+## ... anddddd, that's it! {#dot-dot-dot-anddddd-that-s-it}
+
+That's all there is to the task management system. In the final part of
+the series, I describe my org-mode powered Zettelkasten system.

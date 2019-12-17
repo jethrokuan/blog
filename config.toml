@@ -7,3 +7,14 @@ theme = "er"
 showTagCloud = false
 description = ""
 email = "jethrokuan95@gmail.com"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "github"
+    tabWidth = 4
