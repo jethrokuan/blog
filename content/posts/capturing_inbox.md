@@ -2,17 +2,19 @@
 title = "Org-mode Workflow Part 1: Capturing in the Inbox"
 author = ["Jethro Kuan"]
 date = 2019-12-14T00:00:00+08:00
-lastmod = 2019-12-15T17:30:05+08:00
+lastmod = 2019-12-19T15:25:35+08:00
 draft = false
 math = true
 +++
 
-Have you ever sat yourself down with a piece of paper, writing out a
-list of things to do? I want you to remember how you felt right after.
-Did you feel a little bit more in control? Isn't it strange that you
-feel better looking at the long list of work to do, knowing that your
-little exercise accomplished nothing on the list? What was the point
-of the exercise in the first place?
+_(Previous Post: [Org-mode Workflow: A Preview]({{< relref "org_mode_workflow_preview" >}}))_
+
+Have you ever sat down with nothing but a pen and a piece of paper,
+writing down everything you need to do? Recall how you felt right
+after. Did you feel more in control? Isn't it strange that you feel
+better looking at the long list of work, knowing that your little
+exercise accomplished nothing on the list? What pushed you to do this
+little exercise?
 
 The list made you feel more in control because it freed yourself from
 having to remember to do these things. With every task on paper, you
@@ -21,9 +23,10 @@ of accomplishing tasks.
 
 > Your brain is for having ideas, not storing them -- David Allen
 
-The inbox is where everything begins. Every article, thought and
-assignment starts from the inbox. Because the inbox is so crucial to
-the workflow, it is important that the process of adding and
+Filling up the inbox is equivalent of doing this exercise,
+systematically and consistently. The inbox is where everything begins.
+Every article, thought and assignment starts from the inbox. Because
+the inbox is so crucial to the workflow, the process of adding and
 processing items is as frictionless as possible. The inbox is all
 about trust. Trust that you everything you will need to think about is
 captured somewhere. This allows you to give your 100% for the current
@@ -34,12 +37,15 @@ than not while we are in the middle of something. The inbox is
 designed such that I am able to file these tasks away in a snap, and
 keep my attention on the current task.
 
+Filling up the inbox should be fun! If you feel dread when you do
+this, you're probably doing this wrong.
+
 
 ## Capturing Items Manually {#capturing-items-manually}
 
 Org-mode ships with a feature called [org-capture](https://orgmode.org/manual/Capture.html), which allows for
-quick storage of notes, anywhere. I use this to quickly add anything
-to my inbox.
+quick storage of notes, from anywhere. I use this to quickly add
+anything to my inbox.
 
 {{< figure src="/ox-hugo/manual_capture.gif" caption="Figure 1: Capturing items manually" >}}
 
@@ -74,5 +80,5 @@ with a link to the email.
 
 I've shown that org-mode provides great tooling to capture items. With
 this, we have completed probably the most impactful step in the
-workflow. In the next part of the series, I will explain how I process
+workflow. In the [next part of the series]({{< relref "processing_inbox" >}}), I will explain how I process
 these items.
