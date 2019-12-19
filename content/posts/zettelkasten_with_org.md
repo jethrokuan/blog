@@ -1,7 +1,7 @@
 +++
 title = "Org-mode Workflow Part 3: Zettelkasten with Org-mode"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-19T18:06:24+08:00
+lastmod = 2019-12-19T18:07:47+08:00
 draft = false
 math = true
 +++
@@ -12,9 +12,6 @@ Many of my tasks are articles, and online lectures that I need to go
 through for independent research. When going through these material, I
 like to record down notes for later reference.
 
-> If you can't explain something to a first year student, then you
-> haven't really understood. -- Richard P. Feynman
-
 
 ## Background {#background}
 
@@ -23,17 +20,23 @@ skip ahead if you're not interested.
 
 I've had a habit of note-taking since my secondary school days, which
 is more than a decade ago. I'd condensed and rephrase whatever the
-teachers taught into shorter material. This strategy had been
-sufficient, up until just a year ago when I was first exposed to
-research. Lectures and tutorials often had a fixed curriculum.
-Academic material was taught in a linear fashion, and it was fine to
-follow the order in which the material was taught. Research (and
-thinking) is, however, highly non-linear. Much of academic process
-comes from forming links between ideas that come from vastly different
-fields. I was frustrated at being ineffective at research, and knew I
-had to change how I managed things. I did some (ineffective) research,
-and asked my senior Cedric who authors [Commoncog](https://commoncog.com/blog/), hoping he'd have
-some suggestions. He'd suggested the P.A.R.A. method in [Tiago Forte's
+teachers taught into shorter material.
+
+> If you can't explain something to a first year student, then you
+> haven't really understood. -- Richard P. Feynman
+
+This strategy had been sufficient, up until just a year ago when I was
+first exposed to research. Lectures and tutorials often had a fixed
+curriculum. Academic material was taught in a linear fashion, and it
+was fine to follow the order in which the material was taught.
+Research (and thinking) is, however, highly non-linear. Much of
+academic process comes from forming links between ideas that come from
+vastly different fields.
+
+I was frustrated at being ineffective at research, and knew I had to
+change how I managed things. I did some (ineffective) research, and
+asked my senior Cedric who authors [Commoncog](https://commoncog.com/blog/), hoping he'd have some
+suggestions. He'd suggested the P.A.R.A. method in [Tiago Forte's
 Building a Second Brain](https://www.fortelabs.co/). There's even [a guest post showing how to do
 it in org-mode](https://tasshin.com/blog/implementing-a-second-brain-in-emacs-and-org-mode/), but I was hoping for something simpler that would
 allow me to quickly get up and running.
