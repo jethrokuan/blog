@@ -1,7 +1,7 @@
 +++
 title = "Org-mode Workflow Part 3: Zettelkasten with Org-mode"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-19T18:25:57+08:00
+lastmod = 2019-12-19T18:29:26+08:00
 draft = false
 math = true
 +++
@@ -85,6 +85,9 @@ papers
 
 books
 : summaries of the books I've read
+
+talks
+: summaries of talks I've watched
 
 root
 : concepts, and personal thoughts
@@ -179,8 +182,8 @@ However, I don't actually use this often.
 
 With the change to this system, I've been able to keep my notes small
 and digestible. I've also been able to do the kind of non-linear
-thinking that is required in academic research. I no longer have to
-think had about where some information should go, and my thoughts can
+thinking that is required in academic research. I **no longer have to
+think hard about where information should go**, and my thoughts can
 flow freely into my second brain. My knowledge repository now
 [generates positive interest rate](https://twitter.com/vgr/status/1203741612007931904).
 
