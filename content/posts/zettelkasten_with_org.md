@@ -1,7 +1,7 @@
 +++
 title = "Org-mode Workflow Part 3: Zettelkasten with Org-mode"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-19T18:29:26+08:00
+lastmod = 2019-12-19T21:41:55+08:00
 draft = false
 math = true
 +++
@@ -20,7 +20,7 @@ skip ahead if you're not interested.
 
 I've had a habit of note-taking since my secondary school days, which
 is more than a decade ago. I'd condensed and rephrase whatever the
-teachers btaught into shorter material.
+teachers taught into shorter material.
 
 > If you can't explain something to a first year student, then you
 > haven't really understood. -- Richard P. Feynman
@@ -57,7 +57,7 @@ similar. To my surprise, this only took about an hour of Googling and
 tweaking.
 
 
-## Why take notes in Org-mode? {#why-take-notes-in-org-mode}
+## Why Take Notes in Org-mode? {#why-take-notes-in-org-mode}
 
 While Org-mode is just a simple plain-text format specification, Emacs
 provides fantastic facilities that make it incredibly powerful. Here
@@ -113,7 +113,7 @@ sources, so I can always return to the source in doubt, and also give
 proper attribution.
 
 
-## The Knowledge Base Overview {#the-knowledge-base-overview}
+## An Overview {#an-overview}
 
 I use [Deft](https://jblevins.org/projects/deft/), which is a mode for quickly browsing and filtering
 plain-text files. As shown previously, here's how it looks like:
@@ -178,7 +178,7 @@ like `grep`:
 However, I don't actually use this often.
 
 
-## Where the Benefits Come From {#where-the-benefits-come-from}
+## My Knowledge Base: post-Roam {#my-knowledge-base-post-roam}
 
 With the change to this system, I've been able to keep my notes small
 and digestible. I've also been able to do the kind of non-linear
@@ -189,7 +189,7 @@ flow freely into my second brain. My knowledge repository now
 
 I've also been able to freely share my knowledge with others. My notes
 are plain-text and version-controlled, automatically published to
-[braidump.jethro.dev](https://braindump.jethro.dev/) via Netlify and Hugo.
+[braindump.jethro.dev](https://braindump.jethro.dev/) via Netlify and Hugo.
 
 
 ## Conclusion {#conclusion}

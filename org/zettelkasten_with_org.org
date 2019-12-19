@@ -14,7 +14,7 @@ skip ahead if you're not interested.
 
 I've had a habit of note-taking since my secondary school days, which
 is more than a decade ago. I'd condensed and rephrase whatever the
-teachers btaught into shorter material. 
+teachers taught into shorter material. 
 
 #+BEGIN_QUOTE
    If you can't explain something to a first year student, then you
@@ -52,7 +52,7 @@ org-mode note-taking workflow, so I set out to build something
 similar. To my surprise, this only took about an hour of Googling and
 tweaking.
 
-* Why take notes in Org-mode?
+* Why Take Notes in Org-mode?
 
 While Org-mode is just a simple plain-text format specification, Emacs
 provides fantastic facilities that make it incredibly powerful. Here
@@ -99,7 +99,7 @@ other, just as in Roam. I use the brilliant [[https://github.com/jkitchin/org-re
 sources, so I can always return to the source in doubt, and also give
 proper attribution.
 
-* The Knowledge Base Overview
+* An Overview
 
 I use [[https://jblevins.org/projects/deft/][Deft]], which is a mode for quickly browsing and filtering
 plain-text files. As shown previously, here's how it looks like:
@@ -166,7 +166,7 @@ like ~grep~:
 
 However, I don't actually use this often.
 
-* Where the Benefits Come From
+* My Knowledge Base: post-Roam
 
 With the change to this system, I've been able to keep my notes small
 and digestible. I've also been able to do the kind of non-linear
@@ -177,7 +177,7 @@ flow freely into my second brain. My knowledge repository now
 
 I've also been able to freely share my knowledge with others. My notes
 are plain-text and version-controlled, automatically published to
-[[https://braindump.jethro.dev/][braidump.jethro.dev]] via Netlify and Hugo. 
+[[https://braindump.jethro.dev/][braindump.jethro.dev]] via Netlify and Hugo. 
 
 * Conclusion
 
