@@ -2,7 +2,7 @@
 title = "Org-mode Workflow: A Preview"
 author = ["Jethro Kuan"]
 date = 2019-12-13T00:00:00+08:00
-lastmod = 2019-12-17T22:59:43+08:00
+lastmod = 2019-12-19T18:05:38+08:00
 draft = false
 math = true
 +++
@@ -30,6 +30,7 @@ org-mode.
 
 1.  [Part 1: Capturing Into The Inbox]({{< relref "capturing_inbox" >}})
 2.  [Part 2: Processing The Inbox]({{< relref "processing_inbox" >}})
+3.  [Part 3: Zettelkasten with Org-mode]({{< relref "zettelkasten_with_org" >}})
 
 
 ## Who am I? {#who-am-i}
