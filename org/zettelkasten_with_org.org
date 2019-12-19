@@ -14,13 +14,12 @@ skip ahead if you're not interested.
 
 I've had a habit of note-taking since my secondary school days, which
 is more than a decade ago. I'd condensed and rephrase whatever the
-teachers taught into shorter material. 
+teachers btaught into shorter material. 
 
 #+BEGIN_QUOTE
    If you can't explain something to a first year student, then you
    haven't really understood. -- Richard P. Feynman
 #+END_QUOTE
-
 
 This strategy had been sufficient, up until just a year ago when I was
 first exposed to research. Lectures and tutorials often had a fixed

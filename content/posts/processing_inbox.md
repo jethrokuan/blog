@@ -2,7 +2,7 @@
 title = "Org-mode Workflow Part 2: Processing the Inbox"
 author = ["Jethro Kuan"]
 date = 2019-12-17T00:00:00+08:00
-lastmod = 2019-12-19T16:07:33+08:00
+lastmod = 2019-12-19T18:25:44+08:00
 draft = false
 math = true
 +++
@@ -226,5 +226,5 @@ That's all there is to the task management system. The vanilla GTD
 system is much more prescriptive, what I've done is to simply pick out
 certain parts that have been useful and easy to implement in org-mode.
 
-In the final part of the series, I describe my org-mode powered
+In the [final part of the series]({{< relref "zettelkasten_with_org" >}}), I describe my org-mode powered
 Zettelkasten system.

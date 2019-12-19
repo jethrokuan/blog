@@ -1,7 +1,7 @@
 +++
 title = "Org-mode Workflow Part 3: Zettelkasten with Org-mode"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-19T18:07:47+08:00
+lastmod = 2019-12-19T18:25:57+08:00
 draft = false
 math = true
 +++
@@ -20,7 +20,7 @@ skip ahead if you're not interested.
 
 I've had a habit of note-taking since my secondary school days, which
 is more than a decade ago. I'd condensed and rephrase whatever the
-teachers taught into shorter material.
+teachers btaught into shorter material.
 
 > If you can't explain something to a first year student, then you
 > haven't really understood. -- Richard P. Feynman

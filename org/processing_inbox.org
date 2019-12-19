@@ -206,5 +206,5 @@ That's all there is to the task management system. The vanilla GTD
 system is much more prescriptive, what I've done is to simply pick out
 certain parts that have been useful and easy to implement in org-mode.
 
-In the final part of the series, I describe my org-mode powered
+In the [[file:zettelkasten_with_org.org][final part of the series]], I describe my org-mode powered
 Zettelkasten system.
