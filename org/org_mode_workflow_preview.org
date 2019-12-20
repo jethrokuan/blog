@@ -26,8 +26,9 @@ org-mode.
 1. [[file:capturing_inbox.org][Part 1: Capturing Into The Inbox]]
 2. [[file:processing_inbox.org][Part 2: Processing The Inbox]]
 3. [[file:zettelkasten_with_org.org][Part 3: Zettelkasten with Org-mode]]
+4. [[file:automatic_publishing.org][Part 4: Automatic Web Publishing]]
 
-You can find my Emacs config at [[github.com/jethrokuan/.emacs.d/][jethrokuan/.emacs.d]], and feel free to
+You can find my Emacs config at [[https://github.com/jethrokuan/.emacs.d/][jethrokuan/.emacs.d]], and feel free to
 reach me at [[mailto:jethrokuan95@gmail.com][jethrokuan95@gmail.com]] for any questions.
 
 * Who am I?

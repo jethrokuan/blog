@@ -2,7 +2,7 @@
 title = "Org-mode Workflow: A Preview"
 author = ["Jethro Kuan"]
 date = 2019-12-13T00:00:00+08:00
-lastmod = 2019-12-20T15:10:26+08:00
+lastmod = 2019-12-20T17:41:53+08:00
 draft = false
 math = true
 +++
@@ -31,6 +31,10 @@ org-mode.
 1.  [Part 1: Capturing Into The Inbox]({{< relref "capturing_inbox" >}})
 2.  [Part 2: Processing The Inbox]({{< relref "processing_inbox" >}})
 3.  [Part 3: Zettelkasten with Org-mode]({{< relref "zettelkasten_with_org" >}})
+4.  [Part 4: Automatic Web Publishing]({{< relref "automatic_publishing" >}})
+
+You can find my Emacs config at [jethrokuan/.emacs.d](https://github.com/jethrokuan/.emacs.d/), and feel free to
+reach me at [jethrokuan95@gmail.com](mailto:jethrokuan95@gmail.com) for any questions.
 
 
 ## Who am I? {#who-am-i}
