@@ -2,7 +2,7 @@
 title = "Org-mode Workflow: A Preview"
 author = ["Jethro Kuan"]
 date = 2019-12-13T00:00:00+08:00
-lastmod = 2019-12-19T18:05:38+08:00
+lastmod = 2019-12-20T15:10:26+08:00
 draft = false
 math = true
 +++

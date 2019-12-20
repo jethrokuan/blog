@@ -2,7 +2,7 @@
 title = "Org-mode Workflow Part 1: Capturing in the Inbox"
 author = ["Jethro Kuan"]
 date = 2019-12-14T00:00:00+08:00
-lastmod = 2019-12-19T15:25:35+08:00
+lastmod = 2019-12-20T15:28:58+08:00
 draft = false
 math = true
 +++
@@ -58,6 +58,16 @@ automatically add webpages and PDFs to my inbox.
 
 {{< figure src="/ox-hugo/article_capture.gif" caption="Figure 2: Capturing articles with a bookmarklet" >}}
 
+The bookmarklet is uses the new org-protocol syntax which isn't very
+well documented. This also requires you to [setup org-protocol appropriately](https://orgmode.org/worg/org-contrib/org-protocol.html#org4166fc4).
+
+```text
+javascript:location.href ='org-protocol://capture?template=c&url='+
+  encodeURIComponent(location.href) +
+  '&title=' + encodeURIComponent(document.title) +
+  '&body=' + encodeURIComponent(window.getSelection())
+```
+
 
 ## Capturing Email {#capturing-email}
 
@@ -77,6 +87,21 @@ with a link to the email.
 
 
 ## What's Next? {#what-s-next}
+
+Here are the capture templates I use:
+
+```emacs-lisp
+(setq jethro/org-agenda-directory "~/.org/gtd/")
+(setq org-capture-templates
+      `(("i" "inbox" entry (file ,(concat jethro/org-agenda-directory "inbox.org"))
+         "* TODO %?")
+        ("e" "email" entry (file+headline ,(concat jethro/org-agenda-directory "emails.org") "Emails")
+         "* TODO [#A] Reply: %a :@home:@school:" :immediate-finish t)
+        ("l" "link" entry (file ,(concat jethro/org-agenda-directory "inbox.org"))
+         "* TODO %(org-cliplink-capture)" :immediate-finish t)
+        ("c" "org-protocol-capture" entry (file ,(concat jethro/org-agenda-directory "inbox.org"))
+         "* TODO [[%:link][%:description]]\n\n %i" :immediate-finish t)))
+```
 
 I've shown that org-mode provides great tooling to capture items. With
 this, we have completed probably the most impactful step in the
