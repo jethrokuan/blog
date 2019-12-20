@@ -67,6 +67,15 @@ is a small list of its features:
 - HTML, ODT, PDF export
 - Excel-like table functionality
 
+** Useful Packages for Note-taking
+
+The vanilla org-mode experience isn't terrible, but these two packages
+have really made note-taking efficient, and deserve a shout-out.
+
+- [[https://github.com/abo-abo/org-download][org-download]] :: easy insertion of images from link locations and screenshots
+- [[https://github.com/rexim/org-cliplink][org-cliplink]] :: inserts the link in clipboard nicely, using the
+  page's title
+
 * A Taxonomy of Notes
 
 Before I mentioned that much of my notes came from articles, academic
@@ -94,10 +103,11 @@ looks like:
   - ...
 #+end_src
 
-Each of these notes are kept relatively small, and may link to each
-other, just as in Roam. I use the brilliant [[https://github.com/jkitchin/org-ref][org-ref]] to cite all my
-sources, so I can always return to the source in doubt, and also give
-proper attribution.
+You can see the Org source for all my notes [[https://github.com/jethrokuan/braindump/blob/master/org/][here]]. Each of these notes
+are kept relatively small, and may link to each other, just as in
+Roam. I use the brilliant [[https://github.com/jkitchin/org-ref][org-ref]] to cite all my sources, so I can
+always return to the source in doubt, and also give proper
+attribution.
 
 * An Overview
 

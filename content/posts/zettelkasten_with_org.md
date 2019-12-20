@@ -1,7 +1,7 @@
 +++
 title = "Org-mode Workflow Part 3: Zettelkasten with Org-mode"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-19T21:41:55+08:00
+lastmod = 2019-12-20T15:44:12+08:00
 draft = false
 math = true
 +++
@@ -73,6 +73,19 @@ is a small list of its features:
 -   Excel-like table functionality
 
 
+### Useful Packages for Note-taking {#useful-packages-for-note-taking}
+
+The vanilla org-mode experience isn't terrible, but these two packages
+have really made note-taking efficient, and deserve a shout-out.
+
+[org-download](https://github.com/abo-abo/org-download)
+: easy insertion of images from link locations and screenshots
+
+[org-cliplink](https://github.com/rexim/org-cliplink)
+: inserts the link in clipboard nicely, using the
+    page's title
+
+
 ## A Taxonomy of Notes {#a-taxonomy-of-notes}
 
 Before I mentioned that much of my notes came from articles, academic
@@ -107,10 +120,11 @@ looks like:
 - ...
 ```
 
-Each of these notes are kept relatively small, and may link to each
-other, just as in Roam. I use the brilliant [org-ref](https://github.com/jkitchin/org-ref) to cite all my
-sources, so I can always return to the source in doubt, and also give
-proper attribution.
+You can see the Org source for all my notes [here](https://github.com/jethrokuan/braindump/blob/master/org/). Each of these notes
+are kept relatively small, and may link to each other, just as in
+Roam. I use the brilliant [org-ref](https://github.com/jkitchin/org-ref) to cite all my sources, so I can
+always return to the source in doubt, and also give proper
+attribution.
 
 
 ## An Overview {#an-overview}
