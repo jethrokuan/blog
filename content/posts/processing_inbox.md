@@ -2,7 +2,7 @@
 title = "Org-mode Workflow Part 2: Processing the Inbox"
 author = ["Jethro Kuan"]
 date = 2019-12-17T00:00:00+08:00
-lastmod = 2019-12-19T18:25:44+08:00
+lastmod = 2019-12-20T15:31:57+08:00
 draft = false
 math = true
 +++
@@ -173,7 +173,9 @@ Next Tasks
 
 I bind this page to a convenient hotkey, so I'll always have a nice
 overview of my day's schedule, what I've accomplished thus far, and
-what's left to do.
+what's left to do. A simplified version of this agenda view can be
+found in [this gist](https://gist.github.com/jethrokuan/78936a44f249e2c1a61b5184669a32d7), but if you're interested in all the gory details
+feel free to pour through my [emacs config](https://github.com/jethrokuan/.emacs.d/blob/master/init.el).
 
 
 ## Doing the Next Right Thing {#doing-the-next-right-thing}
