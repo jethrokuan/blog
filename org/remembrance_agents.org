@@ -1,0 +1,107 @@
+#+SETUPFILE: ./hugo_setup.org
+#+TITLE: Experimenting with Remembrance Agents
+#+DATE: <2020-01-06 Mon>
+
+Recently someone brought the concept of [[http://alumni.media.mit.edu/~rhodes/Papers/remembrance.html][Remembrance Agents]] to my
+attention. Remembrance Agents are programs which augment the human
+memory by displaying documents, such as notes and emails, that are
+potentially relevant to the current context. This fascinated me, and I
+thought I could potentially incorporate something similar into my
+[[https://braindump.jethro.dev/][braindump]] [[file:zettelkasten_with_org.org][workflow]], so I set aside some hours to see how I could get a
+proof-of-concept out.
+
+* Existing Software
+
+A simple Github search reveals that any relevant software is dated and
+unmaintained. NLP has come really far in the past decade, and new
+techniques should definitely contribute to higher quality
+recommendations.
+
+Several other techniques seemed plausible off the top
+of my mind. Topic models such as [[https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation][Latent Dirichlet Allocation]] (on which
+[[https://github.com/jethrokuan/lda-survey][I spent a year researching on]]) could compute topics and their topical
+similarities. It even has an online learning algorithm, which makes it
+an attractive solution with an ever-growing knowledge dump. I wasn't
+sure how to handle documents that are constantly changing (edited), so
+I just left that as a thought.
+
+[[https://www.lesbonscomptes.com/recoll/][Recoll]] is a mature indexing and search tool that does a fantastic job
+of retrieval, but is based on keyword search. It would not be able to
+detect documents that are similar, despite using different words.
+However, it had a feature which indexes every web-page I visit, and
+it was interesting enough for me to try out, so I went with Recoll.
+
+* Setting Up Recoll
+
+After installing Recoll, I installed [[https://addons.mozilla.org/en-US/firefox/addon/recoll-we/][the firefox extension]], which
+queues every page I visit for processing. I then setup Recoll to run
+as a daemon on startup, with the following config:
+
+#+begin_src text
+  topdirs =  ~/.org/braindump/org/ ~/Downloads
+  monitordirs = ~/.org/braindump/org/ ~/Downloads
+  processwebqueue = true
+#+end_src
+
+* Writing Org-Remembrance
+
+Similar to the original Remembrance Agents design, I wanted
+~org-remembrance~ to be unintrusive. Hence I've decided that it would:
+
+1. Run only when idle for some time. Here I chose 2 seconds.
+2. Choose automatically what to query. I arbitrarily decided to use a
+   window of words around the current word-at-point as the query.
+
+I went though [[https://github.com/stardiviner/org-recoll][org-recoll]]'s code and [[https://www.lesbonscomptes.com/recoll/usermanual/usermanual.html][Recoll's documentation]] to see what
+I could adapt. Org-recoll did not provide some results that I wanted,
+such as the relevancy rating, so I rewrote some of the parsing logic.
+
+After about 3 hours, I had something decent working, and the code can
+be found [[https://github.com/jethrokuan/org-remembrance][here]].
+
+* Demo
+
+Here it is updating the queries after I'm idle for 2 seconds, using
+the words around it.
+
+#+CAPTION: Automatically updating the query after 2 seconds of idle time
+[[file:images/remembrance_agents/remembrance_auto.gif]]
+
+One can also query a region manually, by marking a region:
+
+#+CAPTION: Manually querying using a region
+[[file:images/remembrance_agents/remembrance_manual.gif]]
+
+* Was it useful?
+
+I tried this out for a while, and have concluded that the results that
+I got back weren't useful enough to warrant my attention, for several
+reasons:
+
+1. The queries tended to contain more stop-words than not, which
+   reduces the relevancy of the search
+2. It's extremely difficult to guess the user's intent
+3. I was not indexing enough documents (only my notes), so there
+   was little relevant information to resurface anyway
+
+Exact searches tended produced much better results, and even surfaced
+relevant web pages that I've visited, but that is not the selling
+point of Remembrance Agents.
+
+* Extensions
+
+Perhaps this would be more useful if I could augment the local results
+with search results found on the web, similar to how Google's search
+engine guesses a user intent, showing cards like:
+
+1. Word definitions
+2. Answers on Stack Overflow
+3. Summaries on Wikipedia
+
+I'd think using topic models would definitely take this a notch
+further, and I could use entire paragraphs as the search term to
+obtain document similarity scores, rather than from guessing keywords.
+
+Let me know if you find good software that implements the ideas of
+Remembrance Agents well! This has certainly been an interesting
+exercise, and I'd say for just 3 hours of hacking, well worth-it.
