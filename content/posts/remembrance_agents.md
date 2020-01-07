@@ -2,7 +2,7 @@
 title = "Experimenting with Remembrance Agents"
 author = ["Jethro Kuan"]
 date = 2020-01-06T00:00:00+08:00
-lastmod = 2020-01-06T16:12:20+08:00
+lastmod = 2020-01-07T15:01:49+08:00
 draft = false
 math = true
 +++
@@ -23,9 +23,9 @@ unmaintained. NLP has come really far in the past decade, and new
 techniques should definitely contribute to higher quality
 recommendations.
 
-Several other techniques seemed plausible off the top
-of my mind. Topic models such as [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent%5FDirichlet%5Fallocation) (on which
-[I spent a year researching on](https://github.com/jethrokuan/lda-survey)) could compute topics and their topical
+Several other techniques seemed plausible off the top of my mind.
+Topic models such as [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent%5FDirichlet%5Fallocation) (on which [I spent a
+year researching on](https://github.com/jethrokuan/lda-survey)) could compute topics and their topical
 similarities. It even has an online learning algorithm, which makes it
 an attractive solution with an ever-growing knowledge dump. I wasn't
 sure how to handle documents that are constantly changing (edited), so
@@ -86,20 +86,20 @@ I tried this out for a while, and have concluded that the results that
 I got back weren't useful enough to warrant my attention, for several
 reasons:
 
-1.  The queries tended to contain more stop-words than not, which
-    reduces the relevancy of the search
-2.  It's extremely difficult to guess the user's intent
+1.  The queries contain stop-words, which reduces the relevancy of the
+    search
+2.  It's difficult to guess the user's intent
 3.  I was not indexing enough documents (only my notes), so there
     was little relevant information to resurface anyway
 
-Exact searches tended produced much better results, and even surfaced
+Manual searches produced better results, and sometimes surfaced
 relevant web pages that I've visited, but that is not the selling
 point of Remembrance Agents.
 
 
 ## Extensions {#extensions}
 
-Perhaps this would be more useful if I could augment the local results
+Perhaps this would be more useful if I could augment local results
 with search results found on the web, similar to how Google's search
 engine guesses a user intent, showing cards like:
 
@@ -107,10 +107,11 @@ engine guesses a user intent, showing cards like:
 2.  Answers on Stack Overflow
 3.  Summaries on Wikipedia
 
-I'd think using topic models would definitely take this a notch
-further, and I could use entire paragraphs as the search term to
-obtain document similarity scores, rather than from guessing keywords.
+I'd think using topic models would take this a notch further. Using
+entire paragraphs as the query should give more robust results.
 
 Let me know if you find good software that implements the ideas of
 Remembrance Agents well! This has certainly been an interesting
 exercise, and I'd say for just 3 hours of hacking, well worth-it.
+
+_(Discussion on [Reddit](https://www.reddit.com/r/emacs/comments/ekr5ek/experimenting%5Fwith%5Fremembrance%5Fagents/))_
