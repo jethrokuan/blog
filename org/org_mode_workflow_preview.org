@@ -1,6 +1,7 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Org-mode Workflow: A Preview
 #+DATE: <2019-12-13 Fri>
+#+HUGO_TAGS: emacs
 
 This is going to be a multi-part series on Emacs and org-mode. This is
 also going to be a really long series, so before we begin I want to

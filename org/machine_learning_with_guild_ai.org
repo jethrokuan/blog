@@ -1,5 +1,6 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Machine Learning with guild.ai
+#+HUGO_TAGS: ml
 
 Since I've been writing on the topic of workflows and tooling, I
 thought I'd give one of my favourite packages, [[https://guild.ai/][guild.ai]], a shout-out,

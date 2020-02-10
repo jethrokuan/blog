@@ -1,7 +1,9 @@
 +++
 title = "Org-mode Workflow Part 4: Automatic Web Publishing"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-20T17:40:49+08:00
+date = 2019-12-20T00:00:00+08:00
+lastmod = 2020-02-10T14:58:48+08:00
+tags = ["emacs"]
 draft = false
 math = true
 +++

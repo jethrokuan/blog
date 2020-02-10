@@ -2,7 +2,8 @@
 title = "Org-mode Workflow: A Preview"
 author = ["Jethro Kuan"]
 date = 2019-12-13T00:00:00+08:00
-lastmod = 2019-12-20T17:41:53+08:00
+lastmod = 2020-02-10T14:55:46+08:00
+tags = ["emacs"]
 draft = false
 math = true
 +++

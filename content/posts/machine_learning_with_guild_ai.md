@@ -1,7 +1,8 @@
 +++
 title = "Machine Learning with guild.ai"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-27T23:57:31+08:00
+lastmod = 2020-02-10T14:56:51+08:00
+tags = ["ml"]
 draft = false
 math = true
 +++

@@ -1,7 +1,9 @@
 +++
 title = "Org-mode Workflow Part 3: Zettelkasten with Org-mode"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-20T15:44:12+08:00
+date = 2019-12-20T00:00:00+08:00
+lastmod = 2020-02-10T14:58:34+08:00
+tags = ["emacs"]
 draft = false
 math = true
 +++

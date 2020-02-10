@@ -2,7 +2,8 @@
 title = "Introducing Org Roam"
 author = ["Jethro Kuan"]
 date = 2020-02-07T00:00:00+08:00
-lastmod = 2020-02-07T01:05:27+08:00
+lastmod = 2020-02-10T14:56:59+08:00
+tags = ["emacs"]
 draft = false
 math = true
 +++

@@ -2,7 +2,8 @@
 title = "Org-mode Workflow Part 1: Capturing in the Inbox"
 author = ["Jethro Kuan"]
 date = 2019-12-14T00:00:00+08:00
-lastmod = 2019-12-20T15:28:58+08:00
+lastmod = 2020-02-10T14:57:02+08:00
+tags = ["emacs"]
 draft = false
 math = true
 +++

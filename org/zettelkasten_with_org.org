@@ -1,5 +1,8 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Org-mode Workflow Part 3: Zettelkasten with Org-mode
+#+DATE: <2019-12-20 Fri>
+#+HUGO_TAGS: emacs
+
 
 /(Previous Post: [[file:processing_inbox.org][Org-mode Workflow Part 2: Processing the Inbox]])/
 

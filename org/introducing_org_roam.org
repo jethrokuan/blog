@@ -1,6 +1,7 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Introducing Org Roam
 #+DATE: <2020-02-07 Fri>
+#+HUGO_TAGS: emacs
 
 In a previous post, I described my [[file:zettelkasten_with_org.org][note-taking workflow with
 zettelkasten and org]]. I extracted some of that logic out into a Github

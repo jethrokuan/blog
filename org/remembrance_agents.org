@@ -1,6 +1,7 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Experimenting with Remembrance Agents
 #+DATE: <2020-01-06 Mon>
+#+HUGO_TAGS: emacs
 
 Recently someone brought the concept of [[http://alumni.media.mit.edu/~rhodes/Papers/remembrance.html][Remembrance Agents]] to my
 attention. Remembrance Agents are programs which augment the human

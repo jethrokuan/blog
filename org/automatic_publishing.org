@@ -1,5 +1,7 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Org-mode Workflow Part 4: Automatic Web Publishing
+#+HUGO_TAGS: emacs
+#+DATE: <2019-12-20 Fri>
 
 Some were curious about how I was automatically publishing my
 Org files, so I thought I'd try to give some insight into the process.

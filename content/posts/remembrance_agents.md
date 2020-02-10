@@ -2,7 +2,8 @@
 title = "Experimenting with Remembrance Agents"
 author = ["Jethro Kuan"]
 date = 2020-01-06T00:00:00+08:00
-lastmod = 2020-01-07T15:01:49+08:00
+lastmod = 2020-02-10T14:57:09+08:00
+tags = ["emacs"]
 draft = false
 math = true
 +++

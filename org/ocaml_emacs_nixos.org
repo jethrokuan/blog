@@ -1,5 +1,6 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Setting up OCaml and Emacs with Nix/NixOS
+#+HUGO_TAGS: emacs, ocaml
 
 I'm learning OCaml via [[https://realworldocaml.org/][Real World OCaml]], and getting a isolated OCaml
 development environment working with NixOS proved to be quite a
