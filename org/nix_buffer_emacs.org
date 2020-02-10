@@ -1,6 +1,7 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Using ~nix-buffer~ with Emacs
-#+HUGO_TAGS: emacs, nix
+#+DATE: <2019-12-13 Fri>
+#+HUGO_TAGS: emacs nix
 
 I do [[https://braindump.jethrokuan.com/][a lot of note-taking]] in Emacs, and have recently started using
 org-babel within my notes. Being on NixOS, this proved to be slightly

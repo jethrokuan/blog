@@ -1,7 +1,9 @@
 +++
 title = "Using nix-buffer with Emacs"
 author = ["Jethro Kuan"]
-lastmod = 2019-12-13T20:20:30+08:00
+date = 2019-12-13T00:00:00+08:00
+lastmod = 2020-02-10T15:12:47+08:00
+tags = ["emacs", "nix"]
 draft = false
 math = true
 +++
