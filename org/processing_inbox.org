@@ -1,6 +1,7 @@
 #+SETUPFILE: ./hugo_setup.org
 #+TITLE: Org-mode Workflow Part 2: Processing the Inbox
 #+DATE: <2019-12-17 Tue>
+#+HUGO_TAGS: emacs
 
 /(Previous Post: [[file:capturing_inbox.org][Org-mode Workflow Part 1: Capturing in the Inbox]])/
 
