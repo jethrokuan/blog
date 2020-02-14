@@ -172,7 +172,6 @@ first looked at all my notes from relevant tags:
 - https://braindump.jethro.dev/zettels/writing_with_zettekasten/
 - https://braindump.jethro.dev/zettels/how_to_take_smart_notes/
 - https://braindump.jethro.dev/zettels/zettelkasten/
-- https://braindump.jethro.dev/zettels/writing_with_zettekasten/
 - https://braindump.jethro.dev/zettels/roam_research/
 
 I simply took a couple of key points and pieced them together!

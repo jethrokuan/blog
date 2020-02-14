@@ -2,7 +2,7 @@
 title = "How To Take Smart Notes With Org-mode"
 author = ["Jethro Kuan"]
 date = 2020-02-14T00:00:00+08:00
-lastmod = 2020-02-15T02:44:58+08:00
+lastmod = 2020-02-15T02:49:56+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -176,7 +176,6 @@ first looked at all my notes from relevant tags:
 -   <https://braindump.jethro.dev/zettels/writing%5Fwith%5Fzettekasten/>
 -   <https://braindump.jethro.dev/zettels/how%5Fto%5Ftake%5Fsmart%5Fnotes/>
 -   <https://braindump.jethro.dev/zettels/zettelkasten/>
--   <https://braindump.jethro.dev/zettels/writing%5Fwith%5Fzettekasten/>
 -   <https://braindump.jethro.dev/zettels/roam%5Fresearch/>
 
 I simply took a couple of key points and pieced them together!
