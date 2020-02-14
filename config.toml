@@ -1,12 +1,11 @@
 baseURL = "https://blog.jethro.dev/"
 languageCode = "en-us"
 title = "Jethro Kuan"
-theme = "er"
+
+theme = "elementary"
 
 [params]
-showTagCloud = false
-description = ""
-email = "jethrokuan95@gmail.com"
+author = "Jethro Kuan"
 
 [markup]
   [markup.highlight]
@@ -18,3 +17,24 @@ email = "jethrokuan95@gmail.com"
     noClasses = true
     style = "github"
     tabWidth = 4
+
+[menu]
+[[menu.main]]
+    name = "email"
+    url = "mailto:jethrokuan95@gmail.com"
+    weight = -120
+
+  [[menu.main]]
+    name = "twitter"
+    url = "https://twitter.com/jethroksy"
+    weight = -110
+
+  [[menu.main]]
+    name = "github"
+    url = "https://github.com/jethrokuan"
+    weight = -100
+
+  [[menu.main]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/jethrokuan"
+    weight = -90
