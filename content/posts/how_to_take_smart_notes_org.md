@@ -2,7 +2,7 @@
 title = "How To Take Smart Notes With Org-mode"
 author = ["Jethro Kuan"]
 date = 2020-02-14T00:00:00+08:00
-lastmod = 2020-02-15T02:49:56+08:00
+lastmod = 2020-02-15T03:01:15+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -45,12 +45,15 @@ be broken down into the following steps:
 4.  Draw conclusions / outline text
 5.  Write
 
-But what about all those lectures and seminars you attend? Books and
-papers you read? Conversations with friends, colleagues, professors?
-Surely these must factor into our eventual work somehow. How do you
-know what's a good research question, if you haven't read a lot? How
-do you derive new ideas and insights, without accounting for the
-current knowledge?
+This process seems natural, but it's highly linear, and seems to
+suggest that the process of writing begins by first deciding on a
+research question. But what about all those lectures and seminars you
+attend? Books and papers you read? Conversations with friends,
+colleagues, professors? Surely these ideas floating in your head, or
+on paper, factor into the written work somehow. Nobody starts from
+scratch. How do you know what's a good research question, without
+relying on prior reading? How do you know what directions to look in
+for new ideas and insights?
 
 Indeed, the preparation for writing begins much earlier, with
 note-taking! What if we follow Feynman's advice, and make note-taking
@@ -68,13 +71,12 @@ bottom up. This also breaks writing down into small, reasonable steps
 This is the driving principle behind the Zettelkasten method, and it
 brings me to my main point:
 
-> The primary purpose of note-taking shouldn't be for storing ideas, but
-> for developing them. The question we want to ask ourselves when we
-> write a note should be: **"In what context do I want to see this note
-> again?"**
+> The primary purpose of note-taking should not be for storing ideas,
+> but for developing them. When we take notes, we should ask: **"In what
+> context do I want to see this note again?"**
 
-A corollary to that statement is that notes can really go anywhere you
-want. They just have to surface where you want them to.
+A corollary to that statement is that notes can go anywhere you want.
+They just have to surface where you want them to.
 
 How do we do all these in Org-mode? This is where Org-roam comes in.
 
@@ -113,7 +115,7 @@ random link from my to-dos in my agenda: [Ask HN: How do you learn
 complex, dense technical information? | Hacker News](https://news.ycombinator.com/item?id=22325975)
 
 At this time I call `org-roam-find-file`, and type in the title of the
-note I want: _"HN : Learning Complex Information"_:
+note I want: _"HN : Learning Complex Technical Information"_:
 
 {{< figure src="/ox-hugo/org-roam-find-file.gif" >}}
 
@@ -185,14 +187,13 @@ I simply took a couple of key points and pieced them together!
 
 All of the above had been enabled by simply exploiting bidirectional
 linking to its fullest extent. What I demonstrated only scratches the
-surface. There are many amazing Org packages that make note-taking
-in Org-mode powerful (see [Ecosystem - Org-Roam](https://org-roam.readthedocs.io/en/develop/ecosystem/)), for example the
-excellent support for LaTeX, citation, table, to-do, and literate
+surface. There are many amazing Org packages that make note-taking in
+Org-mode powerful (see [Ecosystem - Org-Roam](https://org-roam.readthedocs.io/en/develop/ecosystem/)), for example the
+excellent support for LaTeX, bibtex, tables, to-do, and even literate
 programming.
 
 I hope I made it clear that the note-taking technique came first, and
-Org-roam was built to enable that. I outlined the principles behind my
-note-taking workflow, and why Org-roam is the way it is. I really
-encourage you to think about why you're taking notes, and what how
-you'd like your notes to serve you. I only recently did this
-introspection, and have found it life-changing.
+Org-roam was built to enable that. I really encourage you to think
+about why you're taking notes, and what how you'd like your notes to
+serve you. I only recently did this introspection, and have found it
+life-changing.
