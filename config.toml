@@ -6,6 +6,7 @@ theme = "elementary"
 
 [params]
 author = "Jethro Kuan"
+email = "jethrokuan95@gmail.com"
 
 [markup]
   [markup.highlight]
@@ -20,10 +21,6 @@ author = "Jethro Kuan"
 
 [menu]
 [[menu.main]]
-    name = "email"
-    url = "mailto:jethrokuan95@gmail.com"
-    weight = -120
-
   [[menu.main]]
     name = "twitter"
     url = "https://twitter.com/jethroksy"
