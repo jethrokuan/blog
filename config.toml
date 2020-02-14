@@ -21,6 +21,11 @@ email = "jethrokuan95@gmail.com"
 
 [menu]
 [[menu.main]]
+[[menu.main]]
+    name = "about me"
+    url = "https://www.jethro.dev"
+    weight = -210
+    
   [[menu.main]]
     name = "twitter"
     url = "https://twitter.com/jethroksy"
