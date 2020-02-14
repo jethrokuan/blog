@@ -2,7 +2,7 @@
 title = "How To Take Smart Notes With Org-mode"
 author = ["Jethro Kuan"]
 date = 2020-02-14T00:00:00+08:00
-lastmod = 2020-02-15T02:36:16+08:00
+lastmod = 2020-02-15T02:44:58+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -109,30 +109,32 @@ note:
 -   any topic or thought I've refined from my fleeting notes
 
 Let's go through a working example of how I do this. I'm picking a
-random link from my TODOs in my agenda, for it happens to be this
-Hacker News thread: [Ask HN: How do you learn complex, dense technical
-information? | Hacker News](https://news.ycombinator.com/item?id=22325975)
+random link from my to-dos in my agenda: [Ask HN: How do you learn
+complex, dense technical information? | Hacker News](https://news.ycombinator.com/item?id=22325975)
 
 At this time I call `org-roam-find-file`, and type in the title of the
 note I want: _"HN : Learning Complex Information"_:
 
 {{< figure src="/ox-hugo/org-roam-find-file.gif" >}}
 
-This creates a note with a random filename (not important to my
-workflow). Throughout the note-taking process, I ask myself the
-question (which I bold again to emphasise): **"In what context do I want
-to see this note again?"**
+(Note the title in the backlinks buffer hasn't updated, because I
+had yet to save the file)
 
-And then I begin to insert links to files using `org-roam-insert`. It
-doesn't matter if the file doesn't yet exist, Org-roam creates the
-files for you. I do this by adding tags at the start of the file:
+This creates a note with a random filename (not important to my
+workflow) in the root org-roam folder . Throughout the note-taking
+process, I ask myself the question (which I bold again to emphasise):
+**"In what context do I want to see this note again?"**
+
+I begin to insert these contextual links to files using
+`org-roam-insert`:
 
 {{< figure src="/ox-hugo/org-roam-insert-filetag.gif" >}}
 
-Now if I whenever I want to revisit anything about learning, I can
-head to the `Learning` page and look at the back-links buffer. And it
-seems I already have material from the [Learning How To Learn](https://www.coursera.org/learn/learning-how-to-learn/) course,
-and [an article about how to do hard things](https://www.drmaciver.com/2019/05/how-to-do-hard-things/).
+It doesn't matter if the links don't yet exist, Org-roam creates the
+files for me. Now if I whenever I want to revisit anything about
+learning, I can head to the `Learning` page and look at the back-links
+buffer. And it seems I already have material from the [Learning How To
+Learn](https://www.coursera.org/learn/learning-how-to-learn/) course, and [an article about how to do hard things](https://www.drmaciver.com/2019/05/how-to-do-hard-things/).
 
 {{< figure src="/ox-hugo/screenshot2020-02-15_02-02-29_.png" >}}
 
@@ -182,11 +184,16 @@ I simply took a couple of key points and pieced them together!
 
 ## Concluding Remark {#concluding-remark}
 
-All of this had been enabled by simply exploiting bidirectional
+All of the above had been enabled by simply exploiting bidirectional
 linking to its fullest extent. What I demonstrated only scratches the
 surface. There are many amazing Org packages that make note-taking
-powerful (see [Ecosystem - Org-Roam](https://org-roam.readthedocs.io/en/develop/ecosystem/)).
+in Org-mode powerful (see [Ecosystem - Org-Roam](https://org-roam.readthedocs.io/en/develop/ecosystem/)), for example the
+excellent support for LaTeX, citation, table, to-do, and literate
+programming.
 
 I hope I made it clear that the note-taking technique came first, and
 Org-roam was built to enable that. I outlined the principles behind my
-note-taking workflow, and why Org-roam is the way it is.
+note-taking workflow, and why Org-roam is the way it is. I really
+encourage you to think about why you're taking notes, and what how
+you'd like your notes to serve you. I only recently did this
+introspection, and have found it life-changing.
