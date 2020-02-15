@@ -2,7 +2,7 @@
 title = "How To Take Smart Notes With Org-mode"
 author = ["Jethro Kuan"]
 date = 2020-02-14T00:00:00+08:00
-lastmod = 2020-02-15T12:04:49+08:00
+lastmod = 2020-02-15T12:10:21+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -136,14 +136,14 @@ It doesn't matter if the links don't yet exist, Org-roam creates the
 files for me. Now if I whenever I want to revisit anything about
 learning, I can head to the `Learning` page and look at the back-links
 buffer. And it seems I already have material from the [Learning How To
-Learn](https://www.coursera.org/learn/learning-how-to-learn/) course, and [an article about how to do hard things](https://www.drmaciver.com/2019/05/how-to-do-hard-things/).
+Learn](https://www.coursera.org/learn/learning-how-to-learn/) course, and [an article about how to do hard things](https://www.drmaciver.com/2019/05/how-to-do-hard-things/). Making these
+manual connections reinforce learning.
 
 {{< figure src="/ox-hugo/screenshot2020-02-15_02-02-29_.png" >}}
 
-Making these kind of manual connections help reinforce learning. Going
-through the HN thread, I see various items mentioned, which I link to
-in my notes. Again, here I create file links liberally, even though I
-may not yet have content in them.
+I go through the thread and start to note down things that interest
+me, in my own words. Again, here I create file links liberally, even
+though I may not yet have content in them.
 
 For example, here I:
 
@@ -163,9 +163,9 @@ keeping the linked articles and papers in my org-agenda.
 
 All links are internal links to files within Org-roam. Doing this
 continuously builds up a dense network of notes. Some useful file-tags
-to have include file-tags from the [PARA method](https://praxis.fortelabs.co/the-p-a-r-a-method-a-universal-system-for-organizing-digital-information-75a9da8bfb37/). Again, it doesn't
-matter what file-tags you use, as long as these notes are able to
-present themselves when you want them to.
+to have include file-tags from the [PARA method](https://praxis.fortelabs.co/the-p-a-r-a-method-a-universal-system-for-organizing-digital-information-75a9da8bfb37/). It doesn't matter what
+file-tags you use, as long as these notes are able to present
+themselves when you want them to.
 
 
 ## What Changed? {#what-changed}

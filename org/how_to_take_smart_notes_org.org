@@ -132,14 +132,14 @@ It doesn't matter if the links don't yet exist, Org-roam creates the
 files for me. Now if I whenever I want to revisit anything about
 learning, I can head to the =Learning= page and look at the back-links
 buffer. And it seems I already have material from the [[https://www.coursera.org/learn/learning-how-to-learn/][Learning How To
-Learn]] course, and [[https://www.drmaciver.com/2019/05/how-to-do-hard-things/][an article about how to do hard things]].
+Learn]] course, and [[https://www.drmaciver.com/2019/05/how-to-do-hard-things/][an article about how to do hard things]]. Making these
+manual connections reinforce learning.
 
 [[file:images/how_to_take_smart_notes_org/screenshot2020-02-15_02-02-29_.png]]
 
-Making these kind of manual connections help reinforce learning. Going
-through the HN thread, I see various items mentioned, which I link to
-in my notes. Again, here I create file links liberally, even though I
-may not yet have content in them.
+I go through the thread and start to note down things that interest
+me, in my own words. Again, here I create file links liberally, even
+though I may not yet have content in them.
 
 For example, here I:
 
@@ -160,9 +160,9 @@ keeping the linked articles and papers in my org-agenda.
 
 All links are internal links to files within Org-roam. Doing this
 continuously builds up a dense network of notes. Some useful file-tags
-to have include file-tags from the [[https://praxis.fortelabs.co/the-p-a-r-a-method-a-universal-system-for-organizing-digital-information-75a9da8bfb37/][PARA method]]. Again, it doesn't
-matter what file-tags you use, as long as these notes are able to
-present themselves when you want them to.
+to have include file-tags from the [[https://praxis.fortelabs.co/the-p-a-r-a-method-a-universal-system-for-organizing-digital-information-75a9da8bfb37/][PARA method]]. It doesn't matter what
+file-tags you use, as long as these notes are able to present
+themselves when you want them to.
 
 * What Changed?
 
