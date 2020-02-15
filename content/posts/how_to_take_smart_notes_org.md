@@ -2,7 +2,7 @@
 title = "How To Take Smart Notes With Org-mode"
 author = ["Jethro Kuan"]
 date = 2020-02-14T00:00:00+08:00
-lastmod = 2020-02-15T03:01:15+08:00
+lastmod = 2020-02-15T12:04:49+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -16,16 +16,16 @@ prescriptive about how note-taking should be done, but Org-roam is
 open enough to enable many note-taking styles, some of which (I feel)
 will be inferior to others. This post is also in part for users to
 understand that there are several feature requests that I may consider
-anti-features, such as renaming notes, and having nested folder
-structures.
+anti-features, such as renaming notes, having multiple org-roam
+directories, and having nested folder structures.
 
 This is the workflow I use. Here I explain what I think note-taking
 should be, and why it should be this way. I implore you (especially
 users of Org-roam) to read this through. As usual, let me know what
 you think by [mail](mailto:jethrokuan95@gmail.com).
 
-The ideas here are definitely not my own: much of it comes from How
-To Take Smart Notes by Sonke Ahrens.
+The ideas here are not my own: much of it comes from How To Take Smart
+Notes by Sonke Ahrens.
 
 
 ## Note-taking Is Not Just a Precursor to Writing {#note-taking-is-not-just-a-precursor-to-writing}
@@ -75,8 +75,10 @@ brings me to my main point:
 > but for developing them. When we take notes, we should ask: **"In what
 > context do I want to see this note again?"**
 
-A corollary to that statement is that notes can go anywhere you want.
-They just have to surface where you want them to.
+A corollary is that notes can go anywhere you want, they just have to
+surface where you want them to. This is a crucial shift in mindset. We
+need to be extremely purposeful with our note-taking. Write down
+things that matter, refine them, file them for resurfacing later.
 
 How do we do all these in Org-mode? This is where Org-roam comes in.
 
@@ -99,10 +101,8 @@ this later.
 
 ### Project Notes {#project-notes}
 
-Project notes are basically everything else, although I encourage you
-to read up about the [PARA method](https://praxis.fortelabs.co/the-p-a-r-a-method-a-universal-system-for-organizing-digital-information-75a9da8bfb37/) as these do serve as useful
-file-tags. Here are some examples of items that get their own project
-note:
+Project notes are basically everything else. Here are some examples of
+items that get their own project note:
 
 -   a talk (e.g. [Emacs Should Be Emacs Lisp - Tom Tromey](https://braindump.jethro.dev/talks/emacs%5Fshould%5Fbe%5Femacs%5Flisp/))
 -   a book (e.g. [Are We Smart Enough to Know How Smart Animals Are?](https://braindump.jethro.dev/books/are%5Fwe%5Fsmart%5Fenough%5Fto%5Fknow%5Fhow%5Fsmart%5Fanimals%5Fare/))
@@ -110,12 +110,12 @@ note:
     Analysis of Recent Neural Reco...](https://braindump.jethro.dev/papers/dacrema19%5Fprogress%5Fneural%5Frec/))
 -   any topic or thought I've refined from my fleeting notes
 
-Let's go through a working example of how I do this. I'm picking a
-random link from my to-dos in my agenda: [Ask HN: How do you learn
-complex, dense technical information? | Hacker News](https://news.ycombinator.com/item?id=22325975)
+Let's work through an example. I picked a random link from my to-dos
+in my org-agenda: [Ask HN: How do you learn complex, dense technical
+information? | Hacker News](https://news.ycombinator.com/item?id=22325975)
 
-At this time I call `org-roam-find-file`, and type in the title of the
-note I want: _"HN : Learning Complex Technical Information"_:
+I call `org-roam-find-file`, and type in the title of the note: _"HN :
+Learning Complex Technical Information"_:
 
 {{< figure src="/ox-hugo/org-roam-find-file.gif" >}}
 
@@ -124,8 +124,8 @@ had yet to save the file)
 
 This creates a note with a random filename (not important to my
 workflow) in the root org-roam folder . Throughout the note-taking
-process, I ask myself the question (which I bold again to emphasise):
-**"In what context do I want to see this note again?"**
+process, I ask myself (I bold again to emphasise): **"In what context
+do I want to see this note again?"**
 
 I begin to insert these contextual links to files using
 `org-roam-insert`:
@@ -152,16 +152,39 @@ For example, here I:
     my to-do list (I've already read this, but I should revisit for post
     note-taking me's sake)
 -   I see some talk on spaced repetition. I already have a note for
-    this, which I link to. Now when I visit spaced repetition file, I
-    can see the debate in this HN thread.
+    this, which I link to.
 
-Here's what the note ended up looking like. Terrible example
-(wasn't really an insightful thread), but I'm in too deep now.
+Here's what the note ended up looking like. Terrible example (wasn't
+really an insightful thread), but I'm in too deep now. This is for
+illustrative purposes only. I ended up tossing the note out, and
+keeping the linked articles and papers in my org-agenda.
 
 {{< figure src="/ox-hugo/screenshot2020-02-15_02-22-12_.png" >}}
 
 All links are internal links to files within Org-roam. Doing this
-continuously builds up a dense network of notes.
+continuously builds up a dense network of notes. Some useful file-tags
+to have include file-tags from the [PARA method](https://praxis.fortelabs.co/the-p-a-r-a-method-a-universal-system-for-organizing-digital-information-75a9da8bfb37/). Again, it doesn't
+matter what file-tags you use, as long as these notes are able to
+present themselves when you want them to.
+
+
+## What Changed? {#what-changed}
+
+First, my notes all reside in the same folder, in a flat hierarchy.
+Nesting notes _artificially_ introduces a hierarchy, which can be
+extremely crippling. I can rely solely on file links to make
+connections between notes.
+
+Second, my notes go anywhere they want, and are generally titled based
+on their source. This is in contrast with putting a note under a topic
+(e.g. "Classical Mechanics"). Notes and ideas can belong to multiple
+topics: it's much easier to just tag "topic files" (in my example,
+"Learning"). With this, there's no need to think about where a note
+should go, and the perpetual question is (I mention yet again) **"In
+what context do I want to see this note again?"**, which is much easier
+and more meaningful to answer. This also means my notes almost become
+write-only. The notes repository can grow incredibly big, and that's
+okay. Only the relevant notes surface.
 
 
 ## How to Use These Notes {#how-to-use-these-notes}
@@ -180,7 +203,8 @@ first looked at all my notes from relevant tags:
 -   <https://braindump.jethro.dev/zettels/zettelkasten/>
 -   <https://braindump.jethro.dev/zettels/roam%5Fresearch/>
 
-I simply took a couple of key points and pieced them together!
+And clicked through their links. I simply took a couple of key points
+and pieced them together!
 
 
 ## Concluding Remark {#concluding-remark}
@@ -194,6 +218,6 @@ programming.
 
 I hope I made it clear that the note-taking technique came first, and
 Org-roam was built to enable that. I really encourage you to think
-about why you're taking notes, and what how you'd like your notes to
+about why you're taking notes, and how you'd like your notes to
 serve you. I only recently did this introspection, and have found it
 life-changing.
