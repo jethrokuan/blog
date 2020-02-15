@@ -95,8 +95,6 @@ Fleeting notes get refined into their own note (own file), and are
 removed from the daily page. These notes are given file-tags, more on
 this later.
 
-** Project Notes
-
 Project notes are basically everything else. Here are some examples of
 items that get their own project note:
 

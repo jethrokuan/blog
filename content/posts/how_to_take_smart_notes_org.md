@@ -2,7 +2,7 @@
 title = "How To Take Smart Notes With Org-mode"
 author = ["Jethro Kuan"]
 date = 2020-02-14T00:00:00+08:00
-lastmod = 2020-02-15T12:10:21+08:00
+lastmod = 2020-02-15T12:24:34+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -97,9 +97,6 @@ head. I take fleeting notes in my daily notes, an idea borrowed from
 Fleeting notes get refined into their own note (own file), and are
 removed from the daily page. These notes are given file-tags, more on
 this later.
-
-
-### Project Notes {#project-notes}
 
 Project notes are basically everything else. Here are some examples of
 items that get their own project note:
