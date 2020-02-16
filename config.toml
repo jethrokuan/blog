@@ -7,6 +7,7 @@ theme = "elementary"
 [params]
 author = "Jethro Kuan"
 email = "jethrokuan95@gmail.com"
+goatcounter = "blog_jethro_dev"
 
 [markup]
   [markup.highlight]
