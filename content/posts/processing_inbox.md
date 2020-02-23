@@ -2,7 +2,7 @@
 title = "Org-mode Workflow Part 2: Processing the Inbox"
 author = ["Jethro Kuan"]
 date = 2019-12-17T00:00:00+08:00
-lastmod = 2020-02-10T15:13:21+08:00
+lastmod = 2020-02-23T12:04:37+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -87,7 +87,7 @@ explain a little on their significance.
 A scheduled task is a task that I _absolutely_ have to do on that
 specific day, on that specific time. Such tasks include appointments
 (with friends, or the doctor), and often appear on the calendar. Most
-often, I transfer these tasks to Google Calendar, and use [org-gcal](https://github.com/myuhe/org-gcal.el) to
+often, I transfer these tasks to Google Calendar, and use [org-gcal](https://github.com/kidd/org-gcal.el) to
 make the items visible in my birds-eye view. **Your calendar is
 sacred**! Do not make the mistake of scheduling tasks that do not
 absolutely have to be done on that time.

@@ -79,7 +79,7 @@ explain a little on their significance.
 A scheduled task is a task that I /absolutely/ have to do on that
 specific day, on that specific time. Such tasks include appointments
 (with friends, or the doctor), and often appear on the calendar. Most
-often, I transfer these tasks to Google Calendar, and use [[https://github.com/myuhe/org-gcal.el][org-gcal]] to
+often, I transfer these tasks to Google Calendar, and use [[https://github.com/kidd/org-gcal.el][org-gcal]] to
 make the items visible in my birds-eye view. *Your calendar is
 sacred*! Do not make the mistake of scheduling tasks that do not
 absolutely have to be done on that time.
