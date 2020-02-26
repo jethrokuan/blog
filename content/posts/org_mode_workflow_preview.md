@@ -2,7 +2,7 @@
 title = "Org-mode Workflow: A Preview"
 author = ["Jethro Kuan"]
 date = 2019-12-13T00:00:00+08:00
-lastmod = 2020-02-10T14:55:46+08:00
+lastmod = 2020-02-26T20:56:52+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -48,7 +48,7 @@ fields, such as neuroscience, robotics, and machine learning.
 
 ## Inspirations {#inspirations}
 
-The workflow I've created is a culmination of [Getting Things Done](http://martin.zinkevich.org/rules%5Fof%5Fml/rules%5Fof%5Fml.pdf), and
+The workflow I've created is a culmination of [Getting Things Done](https://www.goodreads.com/book/show/1633.Getting%5FThings%5FDone), and
 [Zettelkasten](https://zettelkasten.de/). The former is used to manage daily tasks, while the
 latter is for personal knowledge management. For more information
 about these 2 systems, I recommend reading these two books:
