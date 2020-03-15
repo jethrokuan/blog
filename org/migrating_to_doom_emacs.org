@@ -1,0 +1,69 @@
+#+SETUPFILE: ./hugo_setup.org
+#+TITLE: Migrating To Doom Emacs
+#+HUGO_TAGS: emacs
+#+DATE: <2020-03-15 Sun>
+
+Yesterday, I spent some time migrating my vanilla Emacs configuration to [[https://github.com/hlissner/doom-emacs/][Doom Emacs]]. The whole process took me about 2 hours, and then today I spent another hour or so figuring out why my original configurations felt different, and tweaked it back to my liking.
+
+For reference, here is [[github:jethrokuan/.emacs.d][my original .emacs.d]] (now archived), and my current configuration lives in my [[github:jethrokuan/dots][home git repository]].
+
+* Why Doom Emacs?
+
+Why did I bother? I was in the midst of configuring my LaTeX editing environment for writing my Final Year Project report, and wasn't having a good time. Despite my attempts at being careful, the company completion backends weren't added in the order that I wanted. I'm no beginner at Emacs. I've been using it for a while, and it's still frustrating that I can't get these little things right.
+
+I needed a configuration that worked, so I studied Doom Emacs' LaTeX module for inspiration. I figured it'd be easier if I just gave Doom Emacs a try, and see if I liked it.
+
+Doom and Spacemacs are configuration kits, which allows one to use a heavily customized Emacs that works out of the box. I don't belong in that category: I prefer a small configuration, with only the things I need. My configuration started out with a large number of additional packages, but I've been gradually removing them in favour of in-built Emacs functionality. For example, improvements to =isearch= in Emacs 27 has allowed me to replace heavier options like =swiper=.
+
+But Doom offers more than a nice, loaded starting configuration. There's a lot of machinery underneath that makes Doom Emacs fast. When I first loaded Doom, I was surprised at how much faster it was in terms of responsiveness and load speed. I couldn't go back. I decided to use Doom for this machinery, choosing only a small subset of its provided modules.
+
+A big factor in making this decision was that Doom's organization is how similar it is to how I originally managed my configuration:
+
+1. Doom uses [[github:raxod502/straight.el][straight.el]] to manage packages, which was also my practice
+2. Doom uses [[github:jwiegley/use-package][use-package]] heavily, and so do I
+
+This made the migration seem less daunting . Using Doom has brought me these benefits:
+
+1. Doom starts up really quickly, which means less waiting time. This is especially important for me because I use [[github:ch11ng/exwm][exwm]], and the time Emacs loads is the time I can start using my computer.
+2. Doom has awesome default modules, including for writing, and programming. With Doom I'm able to par down my own configuration even further, and focus on customizing the things I really care about, like my Org workflow.
+3. Everything works the same, but feels snappier, and with less config! All pros and no cons!
+
+* The Migration Process
+
+First, I followed the instructions in the README to install Doom Emacs:
+
+#+BEGIN_SRC bash
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+#+END_SRC
+
+Next, I looked through Doom's generated ~init.el~. Doom starts out with a configuration using ~evil-mode~ everywhere. I played around with it for a while, but figured that I'm still much more efficient with just the usual Emacs keybindings, so I ended up turning it off. I'm pleasantly surprised that Doom works just as well without ~evil-mode~. I tweaked ~init.el~ to contain only modules that I use.
+
+It took me a while to understand how Doom worked, but it became clear that ~packages.el~ contains packages and their recipes, and everything else should go into ~config.el~. I began slowly copying things from my configuration over into the ~.doom.d/config.el~ file, following a small mental checklist.
+
+1. Is this really necessary?
+2. Is this already handled by a Doom module (glancing at ~init.el~)?
+3. Are the keybindings I'm using here important to me? Doom places most of the configuration behind its leader key =C-c=, but that also makes certain frequent interactive commands (like my agenda) further away than I hoped.
+
+When I decide to copy something over, the basic process goes like this:
+
+1. Copy the =use-package= declaration, replacing =use-package= with =use-package!=, Doom's own macro.
+2. Move the recipe into =packages.el=
+3. Migrate bindings to the =:init= section of the =use-package!= macro, using Doom's =map!= macro.
+4. Make sure the package is lazy loaded, by adding autoloads via =:commands= in =use-package=, or similar. I find inspiration for these by looking through the modules Doom ships with.
+5. Reload and test my configuration with =C-h r r=, or =doom/reload=
+
+* Configuring Doom's Defaults
+
+Doom's defaults can be a bit strange, and it's important to know where these settings are set, and how to have them changed. For example, I noticed that when composing mail using Doom's =notmuch= module, hard line breaks are added in paragraphs. This makes for a terrible mobile reading experience. How do we figure out what's going on?
+
+First, I look at what modes are enabled via =C-h m=. That quickly reveals the culprit to be =auto-fill-mode=, which doesn't occur in my =config.el=. To figure out what's turning it on, I navigate to the =.emacs.d= folder and do a project-wide search for "auto-fill-mode". Doom exposes its search functionality on prefix key "s", so for me this is =C-c s s=. I quickly found that Doom's =core-editor= module turns on =auto-fill-mode= on all text-based modes. Doom provides an alternative =word-wrap= module that uses soft line-breaks, so I added the following to remove =auto-fill-mode=, and enable =word-wrap-mode= on =message-mode= buffers:
+
+#+BEGIN_SRC emacs-lisp
+(remove-hook 'text-mode-hook #'auto-fill-mode)
+(add-hook 'message-mode-hook #'word-wrap-mode)
+#+END_SRC
+
+* Conclusion
+
+Migrating to Doom has increased the speed of my Emacs configuration, despite it behaving nearly the same. My configuration reduced from 1800 lines to 600 lines, containing the (Org-mode-related) tweaks that make this Emacs configuration truly mine. My experience with Doom on Emacs keybindings so far has been good, and things work just like I expect them to!
