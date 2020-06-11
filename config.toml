@@ -23,7 +23,7 @@ goatcounter = "blog_jethro_dev"
 [menu]
 [[menu.main]]
 [[menu.main]]
-    name = "about me"
+    name = "about"
     url = "https://www.jethro.dev"
     weight = -210
     
