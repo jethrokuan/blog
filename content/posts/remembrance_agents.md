@@ -2,7 +2,7 @@
 title = "Experimenting with Remembrance Agents"
 author = ["Jethro Kuan"]
 date = 2020-01-06T00:00:00+08:00
-lastmod = 2020-02-10T14:57:09+08:00
+lastmod = 2020-06-16T18:03:06+08:00
 tags = ["emacs"]
 draft = false
 math = true
@@ -46,9 +46,9 @@ queues every page I visit for processing. I then setup Recoll to run
 as a daemon on startup, with the following config:
 
 ```text
-topdirs =  ~/.org/braindump/org/ ~/Downloads
-monitordirs = ~/.org/braindump/org/ ~/Downloads
-processwebqueue = true
+  topdirs =  ~/.org/braindump/org/ ~/Downloads
+  monitordirs = ~/.org/braindump/org/ ~/Downloads
+  processwebqueue = true
 ```
 
 
