@@ -1,24 +1,24 @@
 #+SETUPFILE: ./hugo_setup.org
-#+TITLE: Machine Learning with guild.ai
+#+TITLE: Machine Learning with Guild AI
 #+HUGO_TAGS: ml
 #+DATE: <2019-12-31 Tue> 
 
 Since I've been writing on the topic of workflows and tooling, I
-thought I'd give one of my favourite packages, [[https://guild.ai/][guild.ai]], a shout-out,
+thought I'd give one of my favourite packages, [[https://guild.ai/][Guild AI]], a shout-out,
 and well-deserved exposure.
 
-Guild.ai is designed for managing machine learning experiments. It
-provides ways to track experiment runs, make runs reproducible, and
-compare runs with different hyperparameters, all in ways that are
-non-intrusive. Those who know me know I care a lot about my tools, and
-this is one of those tools that really spark joy. It's no surprise
-that the author of this package, [[https://github.com/gar1t][Garrett Smith]], comes from a systems
-engineering background. Garrett is also highly responsive on Slack,
-actively listening to the users, and provides support.
+Guild AI is designed for managing machine learning experiments. It provides ways
+to track experiment runs, make runs reproducible, and compare runs with
+different hyperparameters, all in ways that are non-intrusive. Those who know me
+know I care a lot about my tools, and this is one of those tools that really
+spark joy. It's no surprise that the author of this package, [[https://github.com/gar1t][Garrett Smith]],
+comes from a systems engineering background. Garrett is also highly responsive
+on Slack and the community site [[https://my.guild.ai/][my.guild.ai]], actively listening to the users,
+and provides support.
 
 * The Competition
 
-While there is [[https://medium.com/@hadyelsahar/how-do-you-manage-your-machine-learning-experiments-ab87508348ac][no shortage of machine learning tooling]], guild.ai takes
+While there is [[https://medium.com/@hadyelsahar/how-do-you-manage-your-machine-learning-experiments-ab87508348ac][no shortage of machine learning tooling]], Guild AI takes
 a minimal and un-intrusive approach towards instrumenting the training
 scripts. Take [[https://github.com/IDSIA/sacred/][Sacred]] for example. It requires instrumenting the Python
 training script with decorators:
@@ -43,14 +43,14 @@ Scalar logging for Sacred is also a custom module within Sacred, and
 visualizing these scalars is done through custom frontends like
 Omniboard.
 
-Guild.ai cleanly uses default Python functionality, allowing one to
+Guild AI cleanly uses default Python functionality, allowing one to
 get started without any modification to training scripts. This also
-makes guild.ai a nice, non-committal choice.I use command-line
-arguments from ~argparse~ as configuration flags. Guild.ai also has
-first-class support for Tensorboard, which is a popular and powerful
+makes Guild a nice, non-committal choice. I use command-line
+arguments from ~argparse~ as configuration flags. Guild AI also has
+first-class support for TensorBoard, which is a popular and powerful
 choice.
 
-* Experiment Tracking with Guild.ai
+* Experiment Tracking with Guild AI
 
 Each run of the training script is tracked, by running them through
 the intuitive guild CLI. The run processes are tracked by Guild.
@@ -63,7 +63,7 @@ view run files (model checkpoints, logs etc.), accessible via ~guild view~.
 
 * Comparing Runs
 
-I use ~guild tensorboard -C~ to load Tensorboard for all my completed
+I use ~guild tensorboard -C~ to load TensorBoard for all my completed
 runs (~-C~).
 
 #+begin_src bash
@@ -72,18 +72,18 @@ runs (~-C~).
   TensorBoard 2.1.0 at http://server1-CLeAR:52675 (Press CTRL+C to quit)
 #+end_src
 
-#+CAPTION: Tensorboard scalars across multiple runs
+#+CAPTION: TensorBoard scalars across multiple runs
 [[file:images/machine_learning_with_guild_ai/screenshot2019-12-27_23-44-20_.png]]
 
-It even supports the Tensorflow HParam view, which is designed for
+It even supports the TensorFlow HParam view, which is designed for
 comparing runs with differing hyperparameters.
 
-Guild.ai supports a SQL-like filtering interface to allow the user to
+Guild AI supports a SQL-like filtering interface to allow the user to
 choose which runs to load and compare.
 
 * Hyperparameter Search
 
-Guild.ai supports multiple methods for hyperparameter search:
+Guild AI supports multiple methods for hyperparameter search:
 
 1. Grid search
 2. Random search
@@ -96,16 +96,16 @@ This can be specified easily via the CLI:
 #+end_src
  
 Hyperparameter search and reproducibility is especially important in
-Reinforcement Learning, and guild.ai has made this extremely simple.
+Reinforcement Learning, and Guild has made this extremely simple.
 
 * Deployment
 
-Since I'm using guild.ai within a research project, I'm not using
-these features. But Guild.ai supports [[https://guild.ai/docs/packages/][packaging]], allowing for model
+Since I'm using Guild AI within a research project, I'm not using
+these features. But Guild AI supports [[https://my.guild.ai/docs/packages/][packaging]], allowing for model
 collaboration, sharing and reuse.
 
 * Conclusion
 
-I'm pleased with guild.ai as is, and the author is actively working on
+I'm pleased with Guild AI as is, and the author is actively working on
 bringing improvements to the tool. I highly recommend machine learning
 practitioners to give it a whirl.
