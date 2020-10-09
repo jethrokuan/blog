@@ -2,7 +2,7 @@
 title = "Self-tracking in Plain Text"
 author = ["Jethro Kuan"]
 date = 2020-10-09T00:00:00+08:00
-lastmod = 2020-10-09T22:50:35+08:00
+lastmod = 2020-10-10T01:32:48+08:00
 tags = ["tools"]
 draft = false
 math = true
@@ -28,7 +28,7 @@ The habit trackers I could find were either:
     (e.g. did I exercise today?) Anything more complex [required significant
     tooling](https://www.philnewton.net/blog/diet-tracking-with-emacs/). I needed something where creating log entries was low friction.
 
-This motivated me to build a simple proof-of-concept logger, [track](https://travis-ci.com/github/jethrokuan/track). It also
+This motivated me to build a simple proof-of-concept logger, [track](https://github.com/jethrokuan/track). It also
 provided me an avenue to learn Rust, although in hindsight I didn't make much
 progress on that front.
 
@@ -69,7 +69,7 @@ track add water 300ml
 
 ## Querying the Log {#querying-the-log}
 
-track exposes a query interface of the form `track query category num-days`,
+`track` exposes a query interface of the form `track query category num-days`,
 where `num-days` defaults to 7 (the past week). It currently performs a simple
 task:
 
@@ -79,8 +79,7 @@ task:
     if there were two entries on the same day, one for `water:300ml` and the
     other `water:600ml`, track would report `water:900ml`.
 
-For example, this is what I see running `track query water` on my 5 days of log
-entries.
+This is what I see running `track query water` on my 5 days of log entries.
 
 ```text
 ~ on  master [!]
@@ -97,11 +96,11 @@ entries.
 ## Entering Entries on the Go {#entering-entries-on-the-go}
 
 Because the log format is so simple, I shipped `track` with a simple Telegram
-bot, that allowed me to add entries by sending a bot the entry:
+bot, that allowed me to add entries by sending the bot an entry:
 
 {{< figure src="/ox-hugo/telegram.png" >}}
 
-I host the Telegram bot on my Digital Ocean instance, and run `sshfs` so that
+I host the Telegram bot on my DigitalOcean instance, and run `sshfs` so that
 all my writes go the remote track file as well.
 
 
