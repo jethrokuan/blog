@@ -1,0 +1,95 @@
++++
+title = "Computing TF transforms with AprilTag"
+author = ["Jethro Kuan"]
+date = 2020-10-26T00:00:00+08:00
+lastmod = 2020-10-26T17:22:01+08:00
+tags = ["robotics"]
+draft = false
+math = true
++++
+
+Suppose we have designed a mount for a camera to be placed on the robot. We
+likely need to obtain the transform between the camera and the robot, so images
+obtained from the camera can be transformed into information the robot can act
+upon. One method is to use the mount design, to compute the translation and
+rotation of the camera. However, 3D printing is often imperfect, and can result
+in inaccurate calibration. What's a simple, empirical method of obtaining a
+transform?
+
+One way is to use AprilTag, a visual fiducial system that can be used for a
+multitude of tasks including AR and camera caliberation. These tags resemble QR
+codes, and their visually distinctive features and small payload allow for
+accurate and fast localization.
+
+{{< figure src="/ox-hugo/apriltag.png" caption="Figure 1: AprilTag's fiducials. They look a lot like QR codes." >}}
+
+In our setup, we wish to compute the transform between an Intel Realsense
+camera, and a link on our Robotiq gripper.
+
+First, we print one of these fiducials(instructions [here](https://github.com/AprilRobotics/apriltag-generation)). Here, I printed the
+`TagStandard41h12` tag with ID 494, of size 8cm. I then placed it at a known
+location within the scene. For me, it is simply at a x-displacement of 0.143m
+from the robot base link.
+
+{{< figure src="/ox-hugo/apriltag.png" caption="Figure 2: The calibration setup. The fiducial is placed in a known location, visible from the camera." >}}
+
+We adjust the camera such that the camera is able to see the fiducial.
+
+First, we publish the known transform:
+
+```bash
+rosrun tf static_transform_publisher -0.140 0 0 at494 world 1000
+```
+
+Then, we clone and configure [apriltag\_ros](https://github.com/AprilRobotics/apriltag%5Fros), changing the settings for our
+fiducial. We set `tag_family` in `settings.yml` to `tagStandard41h12`, and setup
+the fiducial in `tags.yml`:
+
+```yaml
+standalone_tags:
+[
+  { id:494, size: 0.08, name: "at494" }
+]
+```
+
+Next, we start the camera stream using the Intel Realsense ROS wrapper:
+
+```bash
+roslaunch realsense2_camera rs_camera.launch
+```
+
+Finally, we start the AprilTag detection node, reading RGB images from the camera stream, and continuously publishing the transforms:
+
+```bash
+roslaunch apriltag_ros continuous_detection.launch \
+    publish_tfs:=true \         # So the transforms are published
+    camera_frame:=camera_color_optical_frame \ # This is the frame in which the camera images are produced
+    camera_name:=/camera/color \ # The name of our camera (to get camera info)
+    image_topic:=image_raw      # Here we use image_raw, typically we use image_rect but we're lazy
+```
+
+We should see that AprilTag is able to detect our fiducial, and that the
+transforms are being published:
+
+{{< figure src="/ox-hugo/apriltag.png" caption="Figure 3: Left: The AprilTag detection system detecting the fiducial. Right: the published TF transforms" >}}
+
+Now that we know the transform between the camera and the fiducial, and there is
+a known transform between the fiducial and the robot, we can now compute the
+transform between the camera and some fixed link (e.g. the base link of the
+gripper we are using):
+
+```bash
+rosrun tf tf_echo camera_link robotiq_arg2f_base_link
+```
+
+```text
+At time 1603444940.190
+- Translation: [-0.069, -0.015, 0.057]
+- Rotation: in Quaternion [0.712, -0.004, 0.702, -0.010]
+            in RPY (radian) [-2.163, -1.548, -0.970]
+            in RPY (degree) [-123.957, -88.668, -55.549]
+```
+
+We can now use this transform via a `static_transform_publisher` for our robotic
+tasks. These computed transforms should be double checked against its
+theoretical values for accuracy.
