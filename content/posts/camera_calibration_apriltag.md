@@ -2,7 +2,7 @@
 title = "Computing TF transforms with AprilTag"
 author = ["Jethro Kuan"]
 date = 2020-10-26T00:00:00+08:00
-lastmod = 2020-10-26T17:22:01+08:00
+lastmod = 2020-10-26T17:23:00+08:00
 tags = ["robotics"]
 draft = false
 math = true
@@ -31,7 +31,7 @@ First, we print one of these fiducials(instructions [here](https://github.com/Ap
 location within the scene. For me, it is simply at a x-displacement of 0.143m
 from the robot base link.
 
-{{< figure src="/ox-hugo/apriltag.png" caption="Figure 2: The calibration setup. The fiducial is placed in a known location, visible from the camera." >}}
+{{< figure src="/ox-hugo/calibration_setup.png" caption="Figure 2: The calibration setup. The fiducial is placed in a known location, visible from the camera." >}}
 
 We adjust the camera such that the camera is able to see the fiducial.
 
@@ -71,7 +71,7 @@ roslaunch apriltag_ros continuous_detection.launch \
 We should see that AprilTag is able to detect our fiducial, and that the
 transforms are being published:
 
-{{< figure src="/ox-hugo/apriltag.png" caption="Figure 3: Left: The AprilTag detection system detecting the fiducial. Right: the published TF transforms" >}}
+{{< figure src="/ox-hugo/detection.png" caption="Figure 3: Left: The AprilTag detection system detecting the fiducial. Right: the published TF transforms" >}}
 
 Now that we know the transform between the camera and the fiducial, and there is
 a known transform between the fiducial and the robot, we can now compute the

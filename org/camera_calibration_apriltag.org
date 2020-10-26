@@ -28,7 +28,7 @@ location within the scene. For me, it is simply at a x-displacement of 0.143m
 from the robot base link.
 
 #+CAPTION: The calibration setup. The fiducial is placed in a known location, visible from the camera.
-[[file:images/apriltag/apriltag.png]]
+[[file:images/apriltag/calibration_setup.png]]
 
 We adjust the camera such that the camera is able to see the fiducial.
 
@@ -69,7 +69,7 @@ We should see that AprilTag is able to detect our fiducial, and that the
 transforms are being published:
 
 #+CAPTION: Left: The AprilTag detection system detecting the fiducial. Right: the published TF transforms
-[[file:images/apriltag/apriltag.png]]
+[[file:images/apriltag/detection.png]]
 
 Now that we know the transform between the camera and the fiducial, and there is
 a known transform between the fiducial and the robot, we can now compute the
