@@ -5,7 +5,7 @@
 
 Yesterday, I spent some time migrating my vanilla Emacs configuration to [[https://github.com/hlissner/doom-emacs/][Doom Emacs]]. The whole process took me about 2 hours, and then today I spent another hour or so figuring out why my original configurations felt different, and tweaked it back to my liking.
 
-For reference, here is [[github:jethrokuan/.emacs.d][my original .emacs.d]] (now archived), and my current configuration lives in my [[github:jethrokuan/dots][home git repository]].
+For reference, here is [[https://github.com/jethrokuan/.emacs.d][my original .emacs.d]] (now archived), and my current configuration lives in my [[https://github.com/jethrokuan/dots][home git repository]].
 
 * Why Doom Emacs?
 
@@ -19,12 +19,12 @@ But Doom offers more than a nice, loaded starting configuration. There's a lot o
 
 A big factor in making this decision was that Doom's organization is how similar it is to how I originally managed my configuration:
 
-1. Doom uses [[github:raxod502/straight.el][straight.el]] to manage packages, which was also my practice
-2. Doom uses [[github:jwiegley/use-package][use-package]] heavily, and so do I
+1. Doom uses [[https://github.com/raxod502/straight.el][straight.el]] to manage packages, which was also my practice
+2. Doom uses [[https://github.com/jwiegley/use-package][use-package]] heavily, and so do I
 
 This made the migration seem less daunting . Using Doom has brought me these benefits:
 
-1. Doom starts up really quickly, which means less waiting time. This is especially important for me because I use [[github:ch11ng/exwm][exwm]], and the time Emacs loads is the time I can start using my computer.
+1. Doom starts up really quickly, which means less waiting time. This is especially important for me because I use [[https://github.com/ch11ng/exwm][exwm]], and the time Emacs loads is the time I can start using my computer.
 2. Doom has awesome default modules, including for writing, and programming. With Doom I'm able to par down my own configuration even further, and focus on customizing the things I really care about, like my Org workflow.
 3. Everything works the same, but feels snappier, and with less config! All pros and no cons!
 
