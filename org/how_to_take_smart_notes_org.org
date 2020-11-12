@@ -88,9 +88,9 @@ the daily page. These notes are given file-tags, more on this later.
 Project notes are basically everything else. Here are some examples of items
 that get their own project note:
 
-- a talk (e.g. [[https://braindump.jethro.dev/talks/emacs_should_be_emacs_lisp/][Emacs Should Be Emacs Lisp - Tom Tromey]])
-- a book (e.g. [[https://braindump.jethro.dev/books/are_we_smart_enough_to_know_how_smart_animals_are/][Are We Smart Enough to Know How Smart Animals Are?]])
-- a paper (e.g. [[https://braindump.jethro.dev/papers/dacrema19_progress_neural_rec/][Are We Really Making Much Progress? A Worrying
+- a talk (e.g. [[https://braindump.jethro.dev/posts/emacs_should_be_emacs_lisp/][Emacs Should Be Emacs Lisp - Tom Tromey]])
+- a book (e.g. [[https://braindump.jethro.dev/posts/are_we_smart_enough_to_know_how_smart_animals_are/][Are We Smart Enough to Know How Smart Animals Are?]])
+- a paper (e.g. [[https://braindump.jethro.dev/posts/dacrema19_progress_neural_rec/][Are We Really Making Much Progress? A Worrying
   Analysis of Recent Neural Reco...]])
 - any topic or thought I've refined from my fleeting notes
 
