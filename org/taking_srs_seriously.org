@@ -1,0 +1,107 @@
+#+SETUPFILE: ./hugo_setup.org
+#+TITLE: Taking Spaced Repetition Seriously
+#+DATE: <2021-01-13 Wed>
+#+HUGO_TAGS: productivity
+
+* Spaced Repetition?
+
+As a maintainer of a project within the personal knowledge management space,
+spaced repetition is something I get asked about a lot. Do I use spaced
+repetition? How do I implement it within my workflows?
+
+To be honest I could never get spaced repetition systems to stick. I'd already
+streamlined the process of creating cards for [[https://apps.ankiweb.net/][Anki]], but it still required so
+much effort, with little tangible benefit. Eventually, I started using pre-made
+decks on Anki, primarily for learning new languages. Creating flashcards is also
+an extremely involved practice that requires a great deal of mastery. A senior
+of mine had recently sent me [[https://andymatuschak.org/prompts/][Andy's esay on writing good prompts]], and I can
+safely say that I'd been doing it all wrong.
+
+In a way spaced repetition is like exercising: the benefits are well-known, but
+because it takes so much effort (and much more so to get it right), people don't
+do it. To this end, Andy is building a mnemonic medium called [[https://withorbit.com/][Orbit]], for which
+he has currently provided access to some content creators to embed flashcards
+within their published content. This is a good way to help content creators
+promote understanding of the content they've written, transforming their
+articles into a reading comprehension task. However, I thought that the onus of
+prompt creation should lies on content consumers. When I hop around on the
+interwebs, I usually have something I'm already thinking about that is slightly
+tangential from the essay contents. I hypothesise that Orbit would have greater
+potential if the content consumer is also able to design and inject their own
+prompts based on the additional context. I also really like that the prompts are
+localized: they can be carefully placed in sections of a long essay to test
+content understanding (see [[https://numinous.productions/timeful/][Timeful Texts]]), and it's easy to revisit the
+corresponding passage if performance on the prompt is poor.
+
+What would make spaced repetition stick for me? I laid out a few requirements:
+
+1. It should be easy to create my own contextualized prompts
+2. Conducting a review should be easy, and I should be able to quickly hop back
+   to the prompt context if needed
+
+I found some services that provide this, but they all have their limitations:
+
+1. [[https://getpolarized.io/][Polar]] is an annotation tool that has AI flashcards creation as well as export
+   to Anki. However, the free version is limited to 250 document captures, and
+   the annotations are limited to Polar's offline captures.
+2. [[https://readwise.io/][Readwise]] uses spaced repetition to resurface highlights in the book, but
+   Andy's research has shown that these sort of prompts are often insufficient.
+
+* Srsly?
+
+Perhaps the hackathon spirit had rubbed off me (I was a judge for [[https://hacknroll.nushackers.org/][a hackathon]]
+this weekend), so I spent a day building [fn:1] a proof-of-concept tool, which I
+named ~srs.ly~.
+
+~srs.ly~ piggybacks off [[https://web.hypothes.is/][hypothes.is]]. While Hypothes.is was built for
+collaborative annotation, it has a fantastic interface for annotating anything
+on the web, and provides a simple API for fetching user annotations. This
+provided a good base for creating contextualized prompts. I decided a prompt
+would be any annotation I made with the tag ~#srsly~.
+
+I added support for two types of cards. Basic cards were question/answer cards,
+where the question and answer were split by two newlines. An example of such a
+prompt would look like:
+
+#+begin_quote
+Who invented the light bulb?
+
+Thomas Edison
+
+#+end_quote
+
+Cloze cards simply have text within square brackets redacted. Any number of
+cloze deletions are supported.
+
+#+begin_quote
+The first three elements of the periodic table are [Hydrogen], [Helium] and [Lithium]
+#+end_quote
+
+Here's me creating these two fake prompts on an old blog post of mine:
+
+[[file:images/srs/create-prompts.gif]]
+
+Next, I hop over to the webapp I built to pull down the new prompts:
+
+[[file:images/srs/sync.gif]]
+
+I implemented the SM2 spaced repetition algorithm described [[https://www.blueraja.com/blog/477/a-better-spaced-repetition-learning-algorithm-sm2][in a blog post I
+found]]. I can now begin my review session, which looks exactly like Anki:
+
+[[file:images/srs/review.gif]]
+
+And that's it! Now I have a simple way to create contextualized prompts, and a
+systematic way to review them. I hope this will finally get me into the habit
+of using spaced repetition to promote understanding of everything I find on the
+internet.
+
+All of the source code for this is hosted on my [[https://github.com/jethrokuan/srs.ly][GitHub repo]]. The code is messy,
+but I'm not a web dev and it works, so 🤷. I'm hoping Andy brings something
+similar into Orbit.
+
+Let me know if you have any thoughts or ideas via [[mailto:jethrokuan95@gmail.com][email]].
+
+
+* Footnotes
+
+[fn:1] of which 70% was fighting React
