@@ -101,6 +101,8 @@ similar into Orbit.
 
 Let me know if you have any thoughts or ideas via [[mailto:jethrokuan95@gmail.com][email]].
 
+(Update: I've made the service free-to-use at [[https://srsly.netlify.app/]], let me know what you think!)
+
 
 * Footnotes
 
