@@ -1,0 +1,60 @@
+#+SETUPFILE: ./hugo_setup.org
+#+TITLE: Releasing Org-roam v2
+#+DATE: <2021-06-24 Thu>
+#+HUGO_TAGS: emacs
+
+6 months and over 200 commits later, I'm finally releasing Org-roam v2!
+
+Org-roam v2 is basically a rewrite of Org-roam. Earlier this year I concluded
+that Org-roam v1 was in heavy technical debt, and I was no longer able to
+outpace the number of issues popping up. This was a result of the continued
+addition of various features, many of which are brittle and interact poorly with
+each other. Org-roam v1 itself had gone through many redesigns, and reeked of
+legacy code and accumulated poor architectural decisions. I decided to distill
+what I'd learned building Org-roam v1 into a simpler, faster v2.
+
+* What took you so long?
+
+Because Org-roam v2 is a near complete rewrite, this provided me with the unique
+opportunity to make as many breaking changes as I needed. I wanted to get it
+right so users don't have to jump through hoops to migrate their notes over
+again.
+
+2021 hasn't exactly been a great year for me either. I'd been slowly chugging
+along whenever I could find the time and willpower. I am indebted to many of the
+users in the community for continuously demonstrating passion for the project,
+providing early feedback, and answering any queries in the community. I'm
+particularly grateful to Noboru, who has been relentless in helping users and
+writing documentation, a practice he's been keeping up for a while now. Boris
+has also been influential in some of the architectural decisions of v2. I also
+appreciate everyone who has provided monetary support, I hope you like what v2
+has to offer.
+
+* What's different?
+
+The key difference between v1 and v2 is that v2 makes no distinction between a
+file note and a headline note. In v2, Org-roam views notes in terms of nodes,
+where a node is /any headline of top level file with an ID/. This means that IDs
+are now compulsory.
+
+This one requirement reduces a lot of overhead. We no longer need special hooks
+maintaining the validity of ~file:~ links, and no longer have to treat headline
+and file notes differently. Org-roam v2 removes 7000 lines of code while only
+re-adding about 4000, and ships with a few more features than Org-roam v1.
+
+Other notable new features include:
+
+- A large number of additional properties are now cached for later usage. This
+  includes the node's TODO state, priority, and the scheduled/deadline time.
+- Keeping the database in sync is much quicker than it was in v1, even when more
+  things are cached
+- Org-roam v2 ships with an updated buffer based on ~magit-section~ for
+  displaying backlinks and other widgets.
+
+* What's next?
+
+Org-roam v2 is provides the necessary caching infrastructure and a relatively
+stable query interface to build additional plugins. One I plan to introduce soon
+is ~org-roam-agenda~, a version of Org-agenda that utilizes the Org-roam
+database, speeding up queries and scaling up Org-agenda to work across multiple
+files.
