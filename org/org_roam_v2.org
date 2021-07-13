@@ -28,7 +28,7 @@ new features, many of which are brittle and interact poorly with each other.
 Org-roam v1 itself had gone through many redesigns, and it accumulated poor
 architectural decisions. For example, headline linking support was patched in,
 and many of the functions then had two separate code paths to support both files
-and headlines. I wanted to see if I could distill what I'd learned building
+and headlines. I wanted to see if I could distill what I've learned building
 Org-roam v1 into a simpler, faster v2.
 
 Also, I'd like to take this opportunity to clarify what Org-roam means to me,
@@ -41,8 +41,8 @@ maintain or fix user-contributed features. Being the sole maintainer is really
 really hard: beyond my full-time job I have little mental capacity left to
 comprehend and resolve these issues that I don't have first-hand experience
 with. With Emacs Lisp being a tinkerer's language, I'd expected a bit more
-open-source contributions, but it is what it is. I can also sort of see why, the
-codebase for Org-roam was incredibly huge, and a good part of it consists of
+open-source contributions, but it is what it is. I can also sort of see why: the
+codebase for Org-roam was incredibly huge, and a good part of it consisted of
 hacky extensions of Org. There were parts that I myself could no longer
 comprehend.
 
@@ -52,7 +52,7 @@ Org-mode notes: it mirrors key information about your notes in a SQLite
 database. The main features (primarily creating and accessing notes) will
 continue to have first-class support. In addition, a public interface for
 accessing the database is provided, and some simple guidelines are made for
-those who wish to build extensions on top of Org-roam. That way I can stay
+those who wish to build extensions on top of Org-roam. With that, I can stay
 focused on keeping the core high quality, while those in the community who are
 more enthusiastic and exploratory about note-taking workflows can experiment
 with the public interface. This also allows me to be accountable to those who
@@ -64,16 +64,17 @@ Because Org-roam v2 is a near complete rewrite, this provided me with the unique
 opportunity to make breaking changes. I wanted to get it right so users don't
 have to jump through hoops to migrate their notes over again.
 
-2021 hasn't exactly been a great year for me either. I'd been chugging along
+2021 hasn't exactly been a great year for me either. I've been chugging along
 whenever I had the time and willpower, which turned out to be a rare
 combination. I am indebted to many of the users in the community for
 continuously demonstrating passion for the project, providing early feedback,
 and answering any queries. I'm not as active in Slack or Discourse as I'd like,
-but I do read them from time to time. I'm particularly grateful to Noboru, who
-has been relentless in helping users and writing documentation, a practice he's
-been keeping up for a while now. Boris has also been influential in some of the
-architectural decisions of v2. I also appreciate everyone who provided support,
-monetary or otherwise. I hope you like what v2 has to offer.
+but I do read them from time to time. I'm particularly grateful to Noboru
+([[https://github.com/nobiot][@nobiot]]), who has been relentless in helping users and writing documentation, a
+practice he's been keeping up for a while now. Boris ([[https://github.com/d12frosted][@d12frosted]] ) has also
+been influential in some of the early architectural decisions of v2. I also
+appreciate everyone who provided support, monetary or otherwise. I hope you like
+what v2 has to offer.
 
 * What's different?
 
@@ -104,9 +105,9 @@ pain than pleasure doing so. I'm expecting a tirade of "XXX is broken" from
 unknowing package upgrades. And guess who has to deal with that? That's right.
 Me.
 
-The crux of the issue is that there are now two versions the same package, which
-operate very differently (file links vs id links) but are actually very similar.
-The main difference is that one of them (v1) will no longer be actively
+The crux of the issue is that there are now two versions of the same package,
+which operate very differently (file links vs id links) but are in fact very
+similar. The main difference is that one of them (v1) will no longer be actively
 maintained by me. And when I say no longer actively maintained by me, it really
 means no longer actively maintained, because... you know why. I created a PR to
 MELPA to provide the Org-roam v1 so both packages can be easily installed, but
