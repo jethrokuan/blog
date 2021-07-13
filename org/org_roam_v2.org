@@ -3,32 +3,77 @@
 #+DATE: <2021-06-24 Thu>
 #+HUGO_TAGS: emacs
 
-6 months and over 200 commits later, I'm finally releasing Org-roam v2!
+6 months and over 200 commits later, I'm finally releasing Org-roam v2 soon!
+Org-roam v2 is an overhaul of Org-roam. It is slimmer and more performant, and
+has first-class support for linking to headlines. It also features a revamped
+side-buffer, a rich completion interface and a clean public interface for
+community extensions to work with.
 
-Org-roam v2 is basically a rewrite of Org-roam. Earlier this year I concluded
-that Org-roam v1 was in heavy technical debt, and I was no longer able to
-outpace the number of issues popping up. This was a result of the continued
-addition of various features, many of which are brittle and interact poorly with
-each other. Org-roam v1 itself had gone through many redesigns, and reeked of
-legacy code and accumulated poor architectural decisions. I decided to distill
-what I'd learned building Org-roam v1 into a simpler, faster v2.
+* Org-roam in 2021?
 
-* What took you so long?
+Over the course of the year, new note-taking apps have been developed. The most
+notable ones (imo) are [[https://obsidian.md/][Obsidian]] (which now has a mobile app) and [[https://logseq.com/][Logseq]]. These
+products both look fantastic, and are under active development. But I think
+Org-roam still best serves the niche community of users who spend take notes in
+Emacs using Org-mode. There is simply no good alternative to both Org-mode and
+Emacs. It appears possible to use Logseq as a web interface to Org-roam, but
+I've never tried it.
+
+* Why the rewrite?
+
+I started contemplating a rewrite some time in December 2020. Issues were
+starting to pile up, and I could not keep up. Org-roam began as a simple (70
+LOC) file-based linking system with a backlinks buffer, but it quickly accrued
+new features, many of which are brittle and interact poorly with each other.
+Org-roam v1 itself had gone through many redesigns, and it accumulated poor
+architectural decisions. For example, headline linking support was patched in,
+and many of the functions then had two separate code paths to support both files
+and headlines. I wanted to see if I could distill what I'd learned building
+Org-roam v1 into a simpler, faster v2.
+
+Also, I'd like to take this opportunity to clarify what Org-roam means to me,
+and hopefully seeing things from my point of view will allow you to be more
+empathetic of the current situation. I'm less crazed about note-taking paradigms
+than most people think. I still use and maintain Org-roam because it removes the
+friction in taking, accessing and synthesizing notes, and to achieve this I only
+need to use a tiny subset of its features. This makes it difficult for me to
+maintain or fix user-contributed features. Being the sole maintainer is really
+really hard: beyond my full-time job I have little mental capacity left to
+comprehend and resolve these issues that I don't have first-hand experience
+with. With Emacs Lisp being a tinkerer's language, I'd expected a bit more
+open-source contributions, but it is what it is. I can also sort of see why, the
+codebase for Org-roam was incredibly huge, and a good part of it consists of
+hacky extensions of Org. There were parts that I myself could no longer
+comprehend.
+
+Part of this rewrite involves narrowing Org-roam's scope, making it more
+manageable for me. Org-roam v2 serves as dual representation to your plain-text
+Org-mode notes: it mirrors key information about your notes in a SQLite
+database. The main features (primarily creating and accessing notes) will
+continue to have first-class support. In addition, a public interface for
+accessing the database is provided, and some simple guidelines are made for
+those who wish to build extensions on top of Org-roam. That way I can stay
+focused on keeping the core high quality, while those in the community who are
+more enthusiastic and exploratory about note-taking workflows can experiment
+with the public interface. This also allows me to be accountable to those who
+have shown support for my work.
+
+* What took me so long?
 
 Because Org-roam v2 is a near complete rewrite, this provided me with the unique
-opportunity to make as many breaking changes as I needed. I wanted to get it
-right so users don't have to jump through hoops to migrate their notes over
-again.
+opportunity to make breaking changes. I wanted to get it right so users don't
+have to jump through hoops to migrate their notes over again.
 
-2021 hasn't exactly been a great year for me either. I'd been slowly chugging
-along whenever I could find the time and willpower. I am indebted to many of the
-users in the community for continuously demonstrating passion for the project,
-providing early feedback, and answering any queries in the community. I'm
-particularly grateful to Noboru, who has been relentless in helping users and
-writing documentation, a practice he's been keeping up for a while now. Boris
-has also been influential in some of the architectural decisions of v2. I also
-appreciate everyone who has provided monetary support, I hope you like what v2
-has to offer.
+2021 hasn't exactly been a great year for me either. I'd been chugging along
+whenever I had the time and willpower, which turned out to be a rare
+combination. I am indebted to many of the users in the community for
+continuously demonstrating passion for the project, providing early feedback,
+and answering any queries. I'm not as active in Slack or Discourse as I'd like,
+but I do read them from time to time. I'm particularly grateful to Noboru, who
+has been relentless in helping users and writing documentation, a practice he's
+been keeping up for a while now. Boris has also been influential in some of the
+architectural decisions of v2. I also appreciate everyone who provided support,
+monetary or otherwise. I hope you like what v2 has to offer.
 
 * What's different?
 
@@ -40,7 +85,7 @@ are now compulsory.
 This one requirement reduces a lot of overhead. We no longer need special hooks
 maintaining the validity of ~file:~ links, and no longer have to treat headline
 and file notes differently. Org-roam v2 removes 7000 lines of code while only
-re-adding about 4000, and ships with a few more features than Org-roam v1.
+re-adding about 4000, and even ships with a few more features than Org-roam v1.
 
 Other notable new features include:
 
@@ -48,13 +93,45 @@ Other notable new features include:
   includes the node's TODO state, priority, and the scheduled/deadline time.
 - Keeping the database in sync is much quicker than it was in v1, even when more
   things are cached
-- Org-roam v2 ships with an updated buffer based on ~magit-section~ for
-  displaying backlinks and other widgets.
+- Org-roam v2 ships with an new buffer based on ~magit-section~ for displaying
+  backlinks and other widgets.
+
+* Wtf bro you just broke my config
+
+Some people seem to think that I don't care about backwards compatibility, and I
+think it's okay releasing breaking changes. I can assure you it brings me more
+pain than pleasure doing so. I'm expecting a tirade of "XXX is broken" from
+unknowing package upgrades. And guess who has to deal with that? That's right.
+Me.
+
+The crux of the issue is that there are now two versions the same package, which
+operate very differently (file links vs id links) but are actually very similar.
+The main difference is that one of them (v1) will no longer be actively
+maintained by me. And when I say no longer actively maintained by me, it really
+means no longer actively maintained, because... you know why. I created a PR to
+MELPA to provide the Org-roam v1 so both packages can be easily installed, but
+the MELPA maintainers make a fair point that MELPA shouldn't really be
+distributing orphaned packages.
+
+Therefore, only Org-roam v2 will be distributed on MELPA, under the same name.
+That means that if you unknowingly upgrade your package from MELPA and obtain
+v2, then your config will break. You'll however see an obnoxious warning that
+you're now on v2. Those who wish to use v1 can obtain it from [[https://github.com/org-roam/org-roam-v1][the repo]], but I
+encourage you to try give v2 a try. (side note: always pin your packages!)
 
 * What's next?
 
-Org-roam v2 is provides the necessary caching infrastructure and a relatively
-stable query interface to build additional plugins. One I plan to introduce soon
-is ~org-roam-agenda~, a version of Org-agenda that utilizes the Org-roam
-database, speeding up queries and scaling up Org-agenda to work across multiple
+Org-roam v2 provides the necessary caching infrastructure and a relatively
+stable query interface to build extensions upon. I think there's some work to be
+done to make the migration process smoother, but I haven't had to migrate
+anything for a while, so some user feedback here would be help. I also have to
+migrate ~org-roam-server~ so it is compatible with the new Org-roam. There's a
+lot more that can be done with the Org-roam buffer.
+
+Following which, I plan to build one or two more core functionalities that I
+believe would be useful. The one that's next up on the roadmap at the moment is
+~org-roam-agenda~. Using the Org-roam database, it should be possible to build a
+version of ~org-agenda~ that is incredibly fast and scales across thousands of
 files.
+
+That's all I have for now. Happy note-taking!
