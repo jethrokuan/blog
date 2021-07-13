@@ -14,10 +14,10 @@ community extensions to work with.
 Over the course of the year, new note-taking apps have been developed. The most
 notable ones (imo) are [[https://obsidian.md/][Obsidian]] (which now has a mobile app) and [[https://logseq.com/][Logseq]]. These
 products both look fantastic, and are under active development. But I think
-Org-roam still best serves the niche community of users who spend take notes in
-Emacs using Org-mode. There is simply no good alternative to both Org-mode and
-Emacs. It appears possible to use Logseq as a web interface to Org-roam, but
-I've never tried it.
+Org-roam still best serves the niche community of users who take notes in Emacs
+using Org-mode. There is simply no good alternative to both Org-mode and Emacs.
+It appears possible to use Logseq as a web interface to Org-roam, but I've never
+tried it.
 
 * Why the rewrite?
 
