@@ -95,7 +95,7 @@ systematic way to review them. I hope this will finally get me into the habit
 of using spaced repetition to promote understanding of everything I find on the
 internet.
 
-All of the source code for this is hosted on my [[https://github.com/jethrokuan/srs.ly][GitHub repo]]. The code is messy,
+All of the source code for this is hosted on my [[https://github.com/jethrokuan/srsly][GitHub repo]]. The code is messy,
 but I'm not a web dev and it works, so 🤷. I'm hoping Andy brings something
 similar into Orbit.
 
