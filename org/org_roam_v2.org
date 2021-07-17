@@ -126,13 +126,41 @@ Therefore, only Org-roam v2 will be distributed on MELPA, under the same name.
 That means that if you unknowingly upgrade your package from MELPA and obtain
 v2, then your config will break. You'll however see an obnoxious warning that
 you're now on v2. Those who wish to use v1 can obtain it from [[https://github.com/org-roam/org-roam-v1][the repo]], but I
-encourage you to try give v2 a try. (side note: always pin your packages!)
+encourage you to try give v2 a try.
+
+As a side note, always pin your packages! Even the poorest package managers for
+language ecosystems (I'm looking at you, Python) lets you specify the version of
+the package you want to install. Package maintainers can publish the breaking
+changes under a new major release and call it a day, without thinking about
+whether it will break production deployments, beacuse the responsibilty is on
+user to use the right version of the package. This infrastructure, while not the
+default for Emacs, is available, and you should use it! I like [[https://github.com/raxod502/straight.el][straight]], but
+there's many others like [[https://github.com/quelpa/quelpa][quelpa]].
 
 One reason I'm less concerned about pushing out this breaking change is because
 migration is actually simple. To upgrade your notes from v1 to v2: simply run
 ~M-x org-roam-migrate-wizard~ (more details [[https://github.com/org-roam/org-roam/wiki/Hitchhiker's-Rough-Guide-to-Org-roam-V2][here]]). After which you just need to
 familiarize yourself with the new commands, which behave very similarly to those
 in v1.
+
+* Why merge now?
+
+People who rely heavily on ~org-roam-server~ will be displeased to find that it
+is not yet compatible with Org-roam v2. Shouldn't I wait for full feature-parity
+before releasing v2?
+
+This is once again an issue with the packaging infrastructure for Emacs: these
+extensions should be able to pin the Org-roam dependency and upgrade in their
+own time, but alas. ~org-roam-server~ and ~org-roam-bibtex~, while under the
+Org-roam organization, are community extensions. The original author of
+~org-roam-server~ has expressed that he is now busy and would be unable to help
+out with the migration, and I'm not sure how long that would take either. And I
+think it's odd to delay the release of a main package based on its dependencies.
+Kudos to Mykhailo ([[https://github.com/myshevchuk][@myshevchuk]]) for keeping ~org-roam-bibtex~ compatible with v2
+though!
+
+v2 as a standalone package is ready for public consumption, and that's why I'm
+merging it.
 
 * What's next?
 
@@ -147,10 +175,10 @@ include:
    days
 3. Building a polished publishing infrastructure via Org export
 
-A popular extension, ~org-roam-server~, is not yet compatible with v2, but I'm
-pleased to see that there are people stepping up to build it. It shouldn't take
-too long to reach feature-parity. There's also a lot more that can be done with the
-Org-roam buffer that I have yet to explore.
+While ~org-roam-server~, is not yet compatible with v2, I'm pleased to see that
+there are people stepping up to build it. It shouldn't take too long to reach
+feature-parity. There's also a lot more that can be done with the Org-roam
+buffer that I have yet to explore.
 
 Following which, I plan to build one or two more core functionalities that I
 believe would be useful. The one that's next up on my roadmap at the moment is
