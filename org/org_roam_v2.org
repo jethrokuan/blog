@@ -137,13 +137,19 @@ in v1.
 * What's next?
 
 Org-roam v2 provides the necessary caching infrastructure and a relatively
-stable query interface to build extensions upon. I think there's some work to be
-done to make the migration process smoother, but I haven't had to migrate
-anything for a while, so some user feedback here would be help.
+stable query interface to build extensions upon. I hope this encourages more
+active experimentation. Some ideas that sound good in my head but are unexplored
+include:
+
+1. Integrating mail: there seems to be decent Org integration for ~notmuch~,
+   ~mu4e~
+2. Integrating news: working with ~elfeed~, ~gnus~ or whatever people use this
+   days
+3. Building a polished publishing infrastructure via Org export
 
 A popular extension, ~org-roam-server~, is not yet compatible with v2, but I'm
 pleased to see that there are people stepping up to build it. It shouldn't take
-too long to get to feature parity. There's a lot more that can be done with the
+too long to reach feature-parity. There's also a lot more that can be done with the
 Org-roam buffer that I have yet to explore.
 
 Following which, I plan to build one or two more core functionalities that I
