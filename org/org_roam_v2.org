@@ -129,13 +129,13 @@ you're now on v2. Those who wish to use v1 can obtain it from [[https://github.c
 encourage you to try give v2 a try.
 
 As a side note, always pin your packages! Even the poorest package managers for
-language ecosystems (I'm looking at you, Python) lets you specify the version of
-the package you want to install. Package maintainers can publish the breaking
-changes under a new major release and call it a day, without thinking about
-whether it will break production deployments, beacuse the responsibilty is on
-user to use the right version of the package. This infrastructure, while not the
-default for Emacs, is available, and you should use it! I like [[https://github.com/raxod502/straight.el][straight]], but
-there's many others like [[https://github.com/quelpa/quelpa][quelpa]].
+language ecosystems lets you specify the version of the package you want to
+install. Package maintainers can publish the breaking changes under a new major
+release and call it a day, without thinking about whether it will break
+production deployments, beacuse the responsibilty is on user to use the right
+version of the package. This infrastructure, while not the default for Emacs, is
+available, and you should use it! I like [[https://github.com/raxod502/straight.el][straight]], but there's many others like
+[[https://github.com/quelpa/quelpa][quelpa]].
 
 One reason I'm less concerned about pushing out this breaking change is because
 migration is actually simple. To upgrade your notes from v1 to v2: simply run
