@@ -1,0 +1,123 @@
+#+SETUPFILE: ./hugo_setup.org
+#+TITLE: Org-roam: A Year In Review
+#+DATE: <2021-12-25 Sat>
+#+HUGO_TAGS: emacs org-roam
+
+It's been over two years since the inception of Org-roam, and with the year
+coming to an end I think a review is timely.
+
+* The Org-roam Rewrite
+
+In the earlier half of the year, [[file:org_roam_v2.org][I'd worked on and released version 2 of
+Org-roam]]. I'd touted it to be more performant, easier to understand and tweak
+from a power-user's perspective. I think the feedback for version 2 was mixed
+with a slight positive lean. Some faced difficulties during migration, others
+were not fond of property drawers, which crowded out the main content. There
+were of course many others that embraced the shift towards the concept of nodes,
+and enjoyed the new completion interface.
+
+From a maintenance perspective, I think version 2 was a huge win. There are
+fewer reported bugs, with a good portion of issues stemming from upstream
+libraries (sqlite + Windows being an annoyingly common one). It has also been
+significantly easier for me to navigate and maintain the code-base, and I've
+also received more contributions from the community.
+
+It is also easier to build extensions for Org-roam. [[https://github.com/ThomasFKJorna][@ThomasFKJorna]] was able to
+write the fabulous [[https://github.com/org-roam/org-roam-ui][org-roam-ui]] basically with no supervision on my end, which
+suggests that the API provided is understandable and sufficient.
+
+* No Change is a Good Thing
+
+The bulk of the updates to Org-roam in the later half of the year were bugfixes,
+refactoring, and performance improvements: the only major feature introduced was
+support for Org 9.5's citation syntax. Perhaps it appears that development on
+the project has stalled, in contrast to other software in this space where new
+features are constantly being released.
+
+I'd like to think that this is a positive sign, and a big differentiating factor
+for Org-roam. Complexity is the enemy! Keeping your workflow simple allows you
+to focus on knowledge work. This is also why I find plain-text notetaking much
+more effective: you're forced to express the idea you have in words. While not
+an easy task, it is a helpful one for building understanding. Org-roam forces
+you to be deliberate in how you construct your slipbox: it only helps you create
+notes and insert links, but what notes you create and what notes you link to is
+key, and this is where the true knowledge work happens.
+
+A bit of a spicy take, but I think it is madness that people are creating custom
+plugins and themes for certain web applications in the name of productivity. The
+only real benchmark of productivity is by measuring actual work output, and
+you'll find that the most brilliant and productive people always have simple
+workflows using simple tools. If Tiago Forte can build his second brain in
+Evernote (no offense), then are all these fancy plugins really necessary?
+
+* The Goal of Org-roam is not to Emulate Roam
+
+The name "Org-roam" is much more a historical relic than a depiction of the
+objective of the software. Org-roam certainly [[https://www.reddit.com/r/emacs/comments/ebrw2l/comment/fd8cp4c/][began as a crude implementation of
+what Roam Research had]], but that was never the goal. I was simply exploring the
+space of note-taking software, figuring out what worked. There has been a lot of
+[[https://org-roam.discourse.group/t/project-name-change/154/33][discussion on a name change]], but I think the name is fine, and pays homage to
+its origins. The goal of Org-roam has always been to *enable a streamlined
+Zettelkasten-like note-taking workflow*. To this end, I think version 2 of
+Org-roam has been extremely successful. Ironically, I think many of the features
+that Roam Research has works against this goal.
+
+* The Community
+
+I've admittedly been less present than I should be in the communities around
+Org-roam. There's a lot of fragmentation here: there's the original Slack
+channel, a Matrix channel, r/emacs, r/OrgRoam, and the Discourse page, and
+perhaps some I don't even know of. I'd like to take this opportunity to give yet
+another shoutout to Noboru, who has done a tremendous job in tackling queries
+here. I don't think it's an understatement to say that Org-roam would not be
+where it is without him.
+
+A big part of my absence is because I thoroughly lack the expertise in answering
+many of these questions. I use only a small subset of what Org-roam provides,
+and I don't have a Windows computer, so I can only provide insight into project
+meta (roadmap, direction etc.) and answering basic queries where there is
+overlap with my own usage, without a significant investment of effort. So many
+users seem to have such complex, demanding workflows! I'm going to keep saying
+that this is an antipattern, and this is a hill I'm willing to die on.
+
+I /want/ Org-roam to encourage simple workflows. Subsequently, I'll publish a
+detailed guide on how I use Org-roam, and the rationale behind my choices. I'm
+hoping this will answer some of the questions the community may have. I often
+forget that not everyone in the community has a technical background, and other
+tools for handling plain-text (such as ~grep~) are not as commonly known as I
+thought. The guide should provide a solid, simple starting point for using
+Org-roam, even for newcomers to Emacs. Since 2022 should theoretically be better
+on me, I'll also commit to being more active on Discourse, at least. On that
+note, if you'd like to provide any direct feedback, you can [[mailto:jethrokuan95@gmail.com][email me]] privately,
+or write up a post on Discourse.
+
+* How Do I Use the Notes I Take?
+
+This is the question I'm still trying to wrap my head around. I think Org-roam
+has already nailed the part on creating and linking notes, but it could
+certainly do better in surfacing notes for review. I'm not sure how I'd approach
+this yet, but this is the area which I'm looking to tackle. I'm currently
+reading the literature for this, and also playing around to get some ideas, but
+suggestions are welcome. My hypothesis is that this should also be a deliberate
+practice and not something trivialized through code, but surely Org-roam can
+provide some value here.
+
+This is an example of how Org-roam will evolve. It always begins with a personal
+experiment based on literature, and once I've concluded that it works, I extract
+it in its minimal form and make it available for all to use. This process takes
+time but at least it comes with a certain quality guarantee.
+
+* Org-roam's Future
+
+Org-roam to me is near-complete software, at least for the functionality I'd
+originally scoped out. Feature introductions will likely be few and far-between,
+depending on my experiments. I'll continue routinely fixing bugs and optimizing
+various things, but I'd say chances of it seeing large changes are near zero.
+I'm not sure how that makes you feel, but I think it's a good thing.
+
+It also isn't clear to me whether there's anyone who'd like to step up to
+maintain/steward Org-roam. Perhaps now that you've learnt about my radical
+desire for simplicity, you think that I'm holding the project back. Let me know!
+I'm happy, excited even, to see where other people can take the project to.
+
+That's all I have, here's to a great 2022!
